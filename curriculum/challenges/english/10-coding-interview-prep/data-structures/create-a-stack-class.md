@@ -3,6 +3,7 @@ id: 587d8250367417b2b2512c5f
 title: Create a Stack Class
 challengeType: 1
 forumTopicId: 301633
+dashedName: create-a-stack-class
 ---
 
 # --description--
@@ -76,8 +77,9 @@ The `peek` method should return the top element of the stack
 assert(
   (function () {
     var test = new Stack();
+    test.push('CS61');
     test.push('CS50');
-    return test.peek() === 'CS50';
+    return test.peek() === 'CS50' && test.peek() === 'CS50';
   })()
 );
 ```
@@ -88,8 +90,9 @@ The `pop` method should remove and return the top element of the stack
 assert(
   (function () {
     var test = new Stack();
+    test.push('CS61');
     test.push('CS50');
-    return test.pop() === 'CS50';
+    return test.pop() === 'CS50' && test.pop() === 'CS61';
   })()
 );
 ```
@@ -111,6 +114,7 @@ The `clear` method should remove all element from the stack
 assert(
   (function () {
     var test = new Stack();
+    test.push('CS61');
     test.push('CS50');
     test.clear();
     return test.isEmpty();

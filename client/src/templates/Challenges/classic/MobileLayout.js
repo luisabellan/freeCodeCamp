@@ -1,14 +1,17 @@
-import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
+import i18next from 'i18next';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import ToolPanel from '../components/Tool-Panel';
-import { createStructuredSelector } from 'reselect';
-import { currentTabSelector, moveToTab } from '../redux';
 import { bindActionCreators } from 'redux';
+import { createStructuredSelector } from 'reselect';
+import envData from '../../../../../config/env.json';
+import ToolPanel from '../components/Tool-Panel';
+import { currentTabSelector, moveToTab } from '../redux';
 import EditorTabs from './EditorTabs';
-import { showUpcomingChanges } from '../../../../config/env.json';
+
+const { showUpcomingChanges } = envData;
 
 const mapStateToProps = createStructuredSelector({
   currentTab: currentTabSelector
@@ -57,31 +60,42 @@ class MobileLayout extends Component {
     };
 
     return (
-      <Fragment>
+      <>
         <Tabs
           activeKey={currentTab}
           defaultActiveKey={1}
           id='challenge-page-tabs'
           onSelect={moveToTab}
         >
-          <TabPane eventKey={1} title='Info'>
+          <TabPane eventKey={1} title={i18next.t('learn.editor-tabs.info')}>
             {instructions}
           </TabPane>
-          <TabPane eventKey={2} title='Code' {...editorTabPaneProps}>
+          <TabPane
+            eventKey={2}
+            title={i18next.t('learn.editor-tabs.code')}
+            {...editorTabPaneProps}
+          >
             {showUpcomingChanges && <EditorTabs />}
             {editor}
           </TabPane>
-          <TabPane eventKey={3} title='Tests' {...editorTabPaneProps}>
+          <TabPane
+            eventKey={3}
+            title={i18next.t('learn.editor-tabs.tests')}
+            {...editorTabPaneProps}
+          >
             {testOutput}
           </TabPane>
           {hasPreview && (
-            <TabPane eventKey={4} title='Preview'>
+            <TabPane
+              eventKey={4}
+              title={i18next.t('learn.editor-tabs.preview')}
+            >
               {preview}
             </TabPane>
           )}
         </Tabs>
         <ToolPanel guideUrl={guideUrl} isMobile={true} videoUrl={videoUrl} />
-      </Fragment>
+      </>
     );
   }
 }
@@ -89,7 +103,4 @@ class MobileLayout extends Component {
 MobileLayout.displayName = 'MobileLayout';
 MobileLayout.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MobileLayout);
+export default connect(mapStateToProps, mapDispatchToProps)(MobileLayout);

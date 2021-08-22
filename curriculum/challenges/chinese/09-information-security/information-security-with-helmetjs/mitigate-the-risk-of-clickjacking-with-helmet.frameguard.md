@@ -3,17 +3,20 @@ id: 587d8247367417b2b2512c38
 title: 使用 helmet.frameguard() 降低点击劫持的风险
 challengeType: 2
 forumTopicId: 301582
+dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard
 ---
 
 # --description--
 
-请注意，本项目在 [这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-infosec) 的基础上进行开发。你也可以从 [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) 上克隆。
+请注意，本项目在 [这个 Repl.it 项目](https://replit.com/github/freeCodeCamp/boilerplate-infosec) 的基础上进行开发。 你也可以从 [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) 上克隆。
 
-黑客可能会不经过你的允许，把你的页面嵌套在 \``或者`</code> 标签里，用以实现“点击劫持”。点击劫持是一种视觉上的欺骗手段，让用户误以为自己在与所看到的网页交互。通过 iframe，黑客可以在你的页面上添加一个透明的“层”，然后把自己的恶意代码放在一个用户看不到的按钮中。这样一来，你网站的执行环境就被黑客设置成了他想要的效果。helmet 中间件可以设置 header 中的 X-Frame-Options 字段，这样我们就能设置哪些人才可以通过 frame/iframe 引入我们的页面了。这个配置有三个选项：DENY、SAMEORIGIN、ALLOW-FROM。 在这个挑战中，我们的应用不需要被 iframe 引用。 </section>\`
+你的网页可能在未经你同意的情况下被放在 `<frame>` 或 `<iframe>` 中。 这可能会导致点击劫持攻击等情况。 点击劫持是一种欺骗用户的技术，使其与用户认为不同的页面进行互动。 这可以通过使用 iframe 的方式，在一个恶意的环境中执行你的页面而获得。 在这种情况下，黑客可以在你的页面上设置一个隐藏层。 隐藏的按钮可以被用来运行坏的脚本。 该中间件设置 X-Frame-Options 头。 它限制了谁可以把你的网站放在一个框架里。 它有三种模式：DENY、SAMEORIGIN 和 ALLOW-FROM。
+
+我们不需要让我们的应用程序可以被嵌入。
 
 # --instructions--
 
-请调用 `helmet.frameguard()`，并传入配置对象 `{action: 'deny'}`。
+使用 `helmet.frameguard()` 时应传递配置对象 `{action: 'deny'}`。
 
 # --hints--
 
@@ -35,7 +38,7 @@ forumTopicId: 301582
   );
 ```
 
-应将 helmet.frameguard() 中的 action 值设置为 'DENY'
+helmet.frameguard() 'action' 应该设置为 “DENY”
 
 ```js
 (getUserInput) =>
@@ -52,3 +55,10 @@ forumTopicId: 301582
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

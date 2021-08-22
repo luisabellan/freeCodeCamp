@@ -6,7 +6,7 @@ import {
   partial,
   stubTrue,
   template as _template
-} from 'lodash';
+} from 'lodash-es';
 
 import {
   compileHeadTail,
@@ -43,11 +43,7 @@ const padContentWithCssCatch = partial(compileHeadTail, cssCatch);
 export const jsToHtml = cond([
   [
     matchesProperty('ext', 'js'),
-    flow(
-      padContentWithJsCatch,
-      wrapInScript,
-      setExtToHTML
-    )
+    flow(padContentWithJsCatch, wrapInScript, setExtToHTML)
   ],
   [stubTrue, identity]
 ]);
@@ -55,16 +51,30 @@ export const jsToHtml = cond([
 export const cssToHtml = cond([
   [
     matchesProperty('ext', 'css'),
-    flow(
-      padContentWithCssCatch,
-      wrapInStyle,
-      setExtToHTML
-    )
+    flow(padContentWithCssCatch, wrapInStyle, setExtToHTML)
   ],
   [stubTrue, identity]
 ]);
 
-export function concatHtml({ required = [], template, files = [] } = {}) {
+export function findIndexHtml(challengeFiles) {
+  const filtered = challengeFiles.filter(challengeFile =>
+    wasHtmlFile(challengeFile)
+  );
+  if (filtered.length > 1) {
+    throw new Error('Too many html blocks in the challenge seed');
+  }
+  return filtered[0];
+}
+
+function wasHtmlFile(challengeFile) {
+  return challengeFile.history[0] === 'index.html';
+}
+
+export function concatHtml({
+  required = [],
+  template,
+  challengeFiles = []
+} = {}) {
   const createBody = template ? _template(template) : defaultTemplate;
   const head = required
     .map(({ link, src }) => {
@@ -83,10 +93,19 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
     })
     .reduce((head, element) => head.concat(element));
 
-  const source = files.reduce(
-    (source, file) => source.concat(file.contents, htmlCatch),
-    ''
-  );
+  const indexHtml = findIndexHtml(challengeFiles);
+
+  const source = challengeFiles.reduce((source, challengeFile) => {
+    if (!indexHtml) return source.concat(challengeFile.contents, htmlCatch);
+    if (
+      indexHtml.importedFiles.includes(challengeFile.history[0]) ||
+      wasHtmlFile(challengeFile)
+    ) {
+      return source.concat(challengeFile.contents, htmlCatch);
+    } else {
+      return source;
+    }
+  }, '');
 
   return `<head>${head}</head>${createBody({ source })}`;
 }

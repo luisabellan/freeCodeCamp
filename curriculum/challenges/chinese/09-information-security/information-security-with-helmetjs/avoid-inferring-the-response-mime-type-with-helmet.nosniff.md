@@ -1,19 +1,22 @@
 ---
 id: 587d8248367417b2b2512c3a
-title: 使用 helment.noSniff() 来避免推断响应的 MIME 类型
+title: 用 helmet.noSniff() 避免推断出响应的 MIME 类型。
 challengeType: 2
 forumTopicId: 301574
+dashedName: avoid-inferring-the-response-mime-type-with-helmet-nosniff
 ---
 
 # --description--
 
-请注意，本项目在 [这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-infosec) 的基础上进行开发。你也可以从 [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) 上克隆。
+请注意，本项目在[这个 Repl.it 项目](https://replit.com/github/freeCodeCamp/boilerplate-infosec)的基础上进行开发。你也可以从 [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) 上克隆。 浏览器可以使用内容或 MIME 嗅探来覆盖响应的 `Content-Type` 头，猜测并使用隐含的内容类型来处理数据。 虽然这在某些情况下可能很方便，但也可能导致一些危险的攻击。 该中间件将 X-Content-Type-Options 头设置为 `nosniff`，指示浏览器不要绕过所提供的 `Content-Type`。
 
-浏览器可以通过 content 或者 MIME 嗅探来判断不同的响应内容。这两个的优先级比 header 中的 Content-Type 高。这在一些情况下非常方便，但也会造成一定的安全风险。我们可以通过中间件来把 header 中的 X-Content-Type-Options 字段设置为 nosniff，这样浏览器就不会绕过 header 中的 Content-Type 了。
+# --instructions--
+
+在你的服务器上使用 `helmet.noSniff()` 方法。
 
 # --hints--
 
-应正确加载 helmet.noSniff() 中间件
+helmet.noSniff() 中间件应该被正确安装
 
 ```js
 (getUserInput) =>
@@ -30,3 +33,10 @@ forumTopicId: 301574
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

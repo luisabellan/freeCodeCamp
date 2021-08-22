@@ -2,6 +2,7 @@
 id: 5f356ed6199b0cdef1d2be8f
 title: Part 27
 challengeType: 0
+dashedName: part-27
 ---
 
 # --description--
@@ -18,10 +19,18 @@ Change the existing `div` selector into a class selector by replacing `div` with
 
 # --hints--
 
-Test 1
+You should have a `.menu` type selector.
 
 ```js
+const hasMenu = new __helpers.CSSHelp(document).getStyle('.menu');
+assert(hasMenu);
+```
 
+You should not have a `div` selector.
+
+```js
+const hasDiv = new __helpers.CSSHelp(document).getStyle('div');
+assert(!hasDiv);
 ```
 
 # --seed--
@@ -45,7 +54,7 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
         </section>
       </main>
     </div>

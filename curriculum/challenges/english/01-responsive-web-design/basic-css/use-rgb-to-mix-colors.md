@@ -4,6 +4,7 @@ title: Use RGB to Mix Colors
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cm24JU6'
 forumTopicId: 18368
+dashedName: use-rgb-to-mix-colors
 ---
 
 # --description--
@@ -29,7 +30,7 @@ You should use `rgb` for the color red.
 ```js
 assert(
   code.match(
-    /\.red-text\s*?{\s*?color:\s*?rgb\(\s*?255\s*?,\s*?0\s*?,\s*?0\s*?\)\s*?;\s*?}/gi
+    /\.red-text\s*{\s*color\s*:\s*rgb\(\s*255\s*,\s*0\s*,\s*0\s*\)\s*;?\s*}/gi
   )
 );
 ```
@@ -45,7 +46,7 @@ You should use `rgb` for the color orchid.
 ```js
 assert(
   code.match(
-    /\.orchid-text\s*?{\s*?color:\s*?rgb\(\s*?218\s*?,\s*?112\s*?,\s*?214\s*?\)\s*?;\s*?}/gi
+    /\.orchid-text\s*{\s*color\s*:\s*rgb\(\s*218\s*,\s*112\s*,\s*214\s*\)\s*;?\s*}/gi
   )
 );
 ```
@@ -61,7 +62,7 @@ You should use `rgb` for the color blue.
 ```js
 assert(
   code.match(
-    /\.blue-text\s*?{\s*?color:\s*?rgb\(\s*?0\s*?,\s*?0\s*?,\s*?255\s*?\)\s*?;\s*?}/gi
+    /\.blue-text\s*{\s*color\s*:\s*rgb\(\s*0\s*,\s*0\s*,\s*255\s*\)\s*;?\s*}/gi
   )
 );
 ```
@@ -77,7 +78,7 @@ You should use `rgb` for the color sienna.
 ```js
 assert(
   code.match(
-    /\.sienna-text\s*?{\s*?color:\s*?rgb\(\s*?160\s*?,\s*?82\s*?,\s*?45\s*?\)\s*?;\s*?}/gi
+    /\.sienna-text\s*{\s*color\s*:\s*rgb\(\s*160\s*,\s*82\s*,\s*45\s*\)\s*;?\s*}/gi
   )
 );
 ```

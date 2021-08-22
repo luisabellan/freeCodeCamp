@@ -1,26 +1,28 @@
 ---
 id: 5e7b9f140b6c005b0e76f07d
+title: 'Web 服务：JSON'
 challengeType: 11
 videoId: ZJE-U56BppM
+dashedName: web-services-json
 ---
 
 # --question--
 
 ## --text--
 
-What will the following code print?:
+这些代码会打印出什么？
 
 ```python
 import json
 data = '''
   [
-    { 'id' : '001',
-      'x' : '2',
-     'name' : 'Quincy'
+    { "id" : "001",
+      "x" : "2",
+     "name" : "Quincy"
     } ,
-    { 'id' : '009',
-      'x' : '7',
-      'name' : 'Mrugesh'
+    { "id" : "009",
+      "x" : "7",
+      "name" : "Mrugesh"
     }
   ]
 '''
@@ -46,14 +48,9 @@ Mrugesh
 
 ---
 
-[Error]
+[Error]（错误）
 
 ## --video-solution--
 
 2
-
-# --hints--
-
-
-# --solutions--
 

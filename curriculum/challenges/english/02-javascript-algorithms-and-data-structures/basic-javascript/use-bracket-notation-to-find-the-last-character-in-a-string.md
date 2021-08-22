@@ -4,20 +4,23 @@ title: Use Bracket Notation to Find the Last Character in a String
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBZQGcv'
 forumTopicId: 18342
+dashedName: use-bracket-notation-to-find-the-last-character-in-a-string
 ---
 
 # --description--
 
 In order to get the last letter of a string, you can subtract one from the string's length.
 
-For example, if `var firstName = "Charles"`, you can get the value of the last letter of the string by using `firstName[firstName.length - 1]`.
+For example, if `var firstName = "Ada"`, you can get the value of the last letter of the string by using `firstName[firstName.length - 1]`.
 
 Example:
 
 ```js
-var firstName = "Charles";
-var lastLetter = firstName[firstName.length - 1]; // lastLetter is "s"
+var firstName = "Ada";
+var lastLetter = firstName[firstName.length - 1];
 ```
+
+`lastLetter` would have a value of the string `a`.
 
 # --instructions--
 
@@ -27,7 +30,7 @@ Use <dfn>bracket notation</dfn> to find the last character in the `lastName` var
 
 # --hints--
 
-`lastLetterOfLastName` should be "e".
+`lastLetterOfLastName` should be the letter `e`.
 
 ```js
 assert(lastLetterOfLastName === 'e');

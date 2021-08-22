@@ -1,14 +1,16 @@
 ---
 id: 5e7b9f090b6c005b0e76f067
+title: Python 字典
 challengeType: 11
 videoId: dnzvfimrRMg
+dashedName: python-dictionaries
 ---
 
 # --question--
 
 ## --text--
 
-What does dict equal after running this code?:
+当这些代码运行之后，dict 等于什么？
 
 ```python
 dict = {"Fri": 20, "Thu": 6, "Sat": 1}
@@ -50,9 +52,4 @@ dict["Sun"] = 9
 ## --video-solution--
 
 5
-
-# --hints--
-
-
-# --solutions--
 

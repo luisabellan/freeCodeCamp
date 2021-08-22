@@ -2,11 +2,12 @@
 id: 5d8a4cfbe6b6180ed9a1ca11
 title: Part 52
 challengeType: 0
+dashedName: part-52
 ---
 
 # --description--
 
-Set the `y` values for `tumblrLine` using a "d function" again. Use your `yScale` and `d.followers.tumblr` to calculcate their values just like you did for the Twitter line.
+Set the `y` values for `tumblrLine` using a "d function" again. Use your `yScale` and `d.followers.tumblr` to calculate their values just like you did for the Twitter line.
 
 The x values for each line will be the same, but the y values will use the data from the different platforms.
 

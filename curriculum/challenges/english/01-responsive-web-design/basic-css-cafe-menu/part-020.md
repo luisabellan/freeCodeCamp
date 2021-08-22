@@ -2,6 +2,7 @@
 id: 5f34a1fd611d003edeafd681
 title: Part 20
 challengeType: 0
+dashedName: part-20
 ---
 
 # --description--
@@ -10,10 +11,18 @@ That brown background makes it hard to read the text. Change the `body` element'
 
 # --hints--
 
-Test 1
+You should set the `background-color` property to `burlywood`.
 
 ```js
+const hasBackground = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['background-color'] === 'burlywood');
+assert(hasBackground);
+```
 
+Your `body` element should have a `burlywood` background.
+
+```js
+const bodyBackground = new __helpers.CSSHelp(document).getStyle('body')?.getPropertyValue('background-color');
+assert(bodyBackground === 'burlywood');
 ```
 
 # --seed--
@@ -36,7 +45,7 @@ Test 1
     </header>
     <main>
       <section>
-        <h2>Coffees</h2>
+        <h2>Coffee</h2>
       </section>
     </main>
   </body>
@@ -53,4 +62,3 @@ h1, h2, p {
   text-align: center;
 }
 ```
-

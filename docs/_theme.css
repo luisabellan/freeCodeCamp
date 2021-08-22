@@ -17,6 +17,12 @@ body {
   text-decoration: none !important;
 }
 
+body .content {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /****** Nav ****/
 
 .universal-nav {
@@ -53,6 +59,10 @@ body {
 @media screen and (max-width: 768px) {
   .universal-nav a.translations-link {
     visibility: hidden;
+  }
+
+  body .content {
+    max-width: 100%;
   }
 }
 
@@ -308,6 +318,13 @@ body.close .github-corner {
 .markdown-section em,
 .markdown-section blockquote {
   color: var(--text-color-tertiary);
+}
+
+@media screen and (max-width: 768px) {
+  .markdown-section {
+    max-width: 90%;
+    padding: 40px 15px 40px 15px;
+  }
 }
 
 /****** CODE HIGHLIGHTING ******/

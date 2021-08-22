@@ -2,6 +2,7 @@
 id: 5f344fad8bf01691e71a30eb
 title: Part 11
 challengeType: 0
+dashedName: part-11
 ---
 
 # --description--
@@ -10,10 +11,22 @@ Up until now, you have been limited regarding the presentation and appearance of
 
 # --hints--
 
-Test 1
+Your code should have an opening `<style>` tag.
 
 ```js
+assert(code.match(/<style\s*>/i));
+```
 
+Your code should have a closing `</style>` tag.
+
+```js
+assert(code.match(/<\/style\s*>/));
+```
+
+Your `style` element should be nested in your `head` element.
+
+```js
+assert(code.match(/<head\s*>[\w\W\s]*<style\s*>[\w\W\s]*<\/style\s*>[\w\W\s]*<\/head\s*>/i))
 ```
 
 # --seed--
@@ -35,11 +48,10 @@ Test 1
     </header>
     <main>
       <section>
-        <h2>Coffees</h2>
+        <h2>Coffee</h2>
       </section>
     </main>
   </body>
 --fcc-editable-region--
 <html>
 ```
-

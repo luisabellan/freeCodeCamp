@@ -1,7 +1,7 @@
 const { Octokit } = require('@octokit/rest');
 
 const {
-  github: { owner, secret, freeCodeCampRepo, defaultBase }
+  github: { owner, secret, freeCodeCampRepo }
 } = require('../../../lib/config');
 
 const getPRs = async () => {
@@ -11,7 +11,6 @@ const getPRs = async () => {
   const methodProps = {
     owner,
     repo: freeCodeCampRepo,
-    base: defaultBase,
     state: 'open',
     sort: 'created',
     direction: 'asc',
@@ -19,8 +18,6 @@ const getPRs = async () => {
   };
 
   const openPRs = await octokit.paginate(octokit.pulls.list, methodProps);
-  // const openPRs = await octokit.pulls.list(methodProps);
-  // console.log(openPRs[0])
   return openPRs;
 };
 

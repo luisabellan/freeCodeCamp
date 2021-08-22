@@ -1,36 +1,35 @@
 ---
 id: 5e9a093a74c4063ca6f7c161
+title: 读取数据简介
 challengeType: 11
 videoId: cDnt02BcHng
+dashedName: reading-data-introduction
 ---
 
 # --description--
 
-More resources:
+*在视频中我们使用的编辑器工具是在 notebook.ai 这个平台，你也可以选择用其他的平台，比如说 Google Colab 也是一个不错的选择。*
 
-\- [Reading CSVs Notebook](https://notebooks.ai/rmotr-curriculum/rdp-reading-csv-and-txt-files-fb829f46)
+以下有更多的资料：
 
-\- [Reading SQL](https://notebooks.ai/rmotr-curriculum/rdp-reading-data-from-relational-databases-2a3a889b)
-
-\- [Reading HTML](https://notebooks.ai/rmotr-curriculum/rdp-reading-html-tables-eb9cca73)
-
-\- [Reading Excel files](https://notebooks.ai/rmotr-curriculum/rdp-reading-excel-files-a6b99973)
+-   [在 GitHub 平台的 Notebooks](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas/tree/master/unit-1-reading-data-with-python-and-pandas/lesson-1-reading-csv-and-txt-files/files)
+-   [如何使用 Google Colab 来打开 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-Given a file named `certificates.csv` with these contents:
+文件 `certificates.csv` 有以下内容：
 
-```
+<pre>
 Name$Certificates$Time (in months)
 Tom$8$16
 Kris$2$5
 Ahmad$5$9
 Beau$6$12
-```
+</pre>
 
-Fill in the blanks for the missing arguments below:
+请填写以下缺失的参数：
 
 ```py
 import csv
@@ -70,9 +69,4 @@ C: `certs_num`
 ## --video-solution--
 
 2
-
-# --hints--
-
-
-# --solutions--
 

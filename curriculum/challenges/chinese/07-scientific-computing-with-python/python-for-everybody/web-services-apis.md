@@ -1,37 +1,34 @@
 ---
 id: 5e7b9f150b6c005b0e76f07f
+title: 'Web 服务：API'
 challengeType: 11
 videoId: oUNn1psfBJg
+dashedName: web-services-apis
 ---
 
 # --question--
 
 ## --text--
 
-What does API stand for?
+API 的全称是什么？
 
 ## --answers--
 
-Application Portable Intelligence
+应用便携式智能（Application Portable Intelligence）
 
 ---
 
-Associate Programming International
+国际助理编程（Associate Programming International）
 
 ---
 
-Application Program Interface
+应用程序接口（Application Program Interface）
 
 ---
 
-Action Portable Interface
+动作便携式接口（Action Portable Interface）
 
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

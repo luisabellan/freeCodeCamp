@@ -1,14 +1,16 @@
 ---
 id: 5ea9997bbec2e9bc47e94db2
+title: 开发 Nmap 扫描器 第二部分
 challengeType: 11
 videoId: a98PscnUsTg
+dashedName: developing-an-nmap-scanner-part-2
 ---
 
 # --question--
 
 ## --text--
 
-Which of the following allows you to scan for UDP ports between 21 to 443?
+以下哪项允许你扫描 21 至 443 之间的 UDP 端口？
 
 ## --answers--
 
@@ -25,9 +27,4 @@ Which of the following allows you to scan for UDP ports between 21 to 443?
 ## --video-solution--
 
 1
-
-# --hints--
-
-
-# --solutions--
 

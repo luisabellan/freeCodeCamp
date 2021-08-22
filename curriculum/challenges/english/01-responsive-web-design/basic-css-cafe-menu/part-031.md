@@ -2,6 +2,7 @@
 id: 5f3c866daec9a49519871816
 title: Part 31
 challengeType: 0
+dashedName: part-31
 ---
 
 # --description--
@@ -10,10 +11,30 @@ challengeType: 0
 
 # --hints--
 
-Test 1
+You should not change the existing `article` element.
 
 ```js
+assert($('article').length === 1);
+```
 
+Your `article` element should have two `p` elements.
+
+```js
+assert($('article').children('p').length === 2);
+```
+
+Your first `p` element should have the text `French Vanilla`.
+
+```js
+const firstP = $('article').children('p')[0];
+assert(firstP.innerText.match(/French Vanilla/i));
+```
+
+Your second `p` element should have the text `3.00`.
+
+```js
+const secondP = $('article').children('p')[1];
+assert(secondP.innerText.match(/3\.00/i));
 ```
 
 # --seed--
@@ -37,7 +58,7 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
 --fcc-editable-region--
           <article>
           </article>
@@ -51,7 +72,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {
@@ -65,4 +86,3 @@ h1, h2, p {
   margin-right: auto;
 }
 ```
-

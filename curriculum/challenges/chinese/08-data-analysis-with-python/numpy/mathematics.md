@@ -1,14 +1,16 @@
 ---
 id: 5e9a0a8e09c5df3cc3600ed8
+title: 数学
 challengeType: 11
 videoId: 7txegvyhtVk
+dashedName: mathematics
 ---
 
 # --question--
 
 ## --text--
 
-What is the value of `b` after running the following code?
+运行以下代码后， `b` 的值是多少？
 
 ```py
 import numpy as np
@@ -44,9 +46,4 @@ b = np.max(a, axis=1).sum()
 ## --video-solution--
 
 4
-
-# --hints--
-
-
-# --solutions--
 

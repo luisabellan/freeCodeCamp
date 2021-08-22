@@ -2,6 +2,7 @@
 id: 5f3477cb303c5cb61b43aa9b
 title: Part 19
 challengeType: 0
+dashedName: part-19
 ---
 
 # --description--
@@ -10,10 +11,25 @@ The text is centered again so the link to the CSS file is working. Add another s
 
 # --hints--
 
-Test 1
+You should use a `body` selector.
 
 ```js
+const hasBody = new __helpers.CSSHelp(document).getStyle('body');
+assert(hasBody);
+```
 
+You should set the `background-color` property to `brown`.
+
+```js
+const hasBackground = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['background-color'] === 'brown');
+assert(hasBackground);
+```
+
+Your `body` element should have a `brown` background.
+
+```js
+const bodyBackground = new __helpers.CSSHelp(document).getStyle('body')?.getPropertyValue('background-color');
+assert(bodyBackground === 'brown');
 ```
 
 # --seed--
@@ -36,7 +52,7 @@ Test 1
     </header>
     <main>
       <section>
-        <h2>Coffees</h2>
+        <h2>Coffee</h2>
       </section>
     </main>
   </body>
@@ -49,5 +65,6 @@ h1, h2, p {
   text-align: center;
 }
 --fcc-editable-region--
+
 ```
 

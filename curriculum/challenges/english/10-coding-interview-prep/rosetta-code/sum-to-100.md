@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc8043
 title: Sum to 100
 challengeType: 5
 forumTopicId: 302335
+dashedName: sum-to-100
 ---
 
 # --description--
@@ -56,16 +57,6 @@ assert.deepEqual(sumTo100(243), [
   '-1-234+567-89',
   '-12+345+6-7-89',
   '123+45+6+78-9'
-]);
-```
-
-`sumTo100(199)` should return `["-1+2-3+45+67+89", "123-4+5+6+78-9", "123-4+56+7+8+9"]`.
-
-```js
-assert.deepEqual(sumTo100(199), [
-  '-1+2-3+45+67+89',
-  '123-4+5+6+78-9',
-  '123-4+56+7+8+9'
 ]);
 ```
 

@@ -1,14 +1,16 @@
 ---
 id: 5e9a0a8e09c5df3cc3600ed5
+title: 初始化不同的数组
 challengeType: 11
 videoId: CEykdsKT4U4
+dashedName: initializing-different-arrays
 ---
 
 # --question--
 
 ## --text--
 
-What will the following code print?
+以下代码将打印出什么？
 
 ```py
 a = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
@@ -39,9 +41,4 @@ print(np.full_like(a, 100))
 ## --video-solution--
 
 2
-
-# --hints--
-
-
-# --solutions--
 

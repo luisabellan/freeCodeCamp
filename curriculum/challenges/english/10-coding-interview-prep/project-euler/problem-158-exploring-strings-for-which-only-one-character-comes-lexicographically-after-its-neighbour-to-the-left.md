@@ -5,6 +5,8 @@ title: >-
   lexicographically after its neighbour to the left
 challengeType: 5
 forumTopicId: 301789
+dashedName: >-
+  problem-158-exploring-strings-for-which-only-one-character-comes-lexicographically-after-its-neighbour-to-the-left
 ---
 
 # --description--
@@ -19,18 +21,18 @@ For 'hat' there is exactly one character that comes lexicographically after its 
 
 In all there are 10400 strings of length 3 for which exactly one character comes lexicographically after its neighbour to the left.
 
-We now consider strings of n ≤ 26 different characters from the alphabet.
+We now consider strings of $n ≤ 26$ different characters from the alphabet.
 
-For every n, p(n) is the number of strings of length n for which exactly one character comes lexicographically after its neighbour to the left.
+For every $n$, $p(n)$ is the number of strings of length $n$ for which exactly one character comes lexicographically after its neighbour to the left.
 
-What is the maximum value of p(n)?
+What is the maximum value of $p(n)$?
 
 # --hints--
 
-`euler158()` should return 409511334375.
+`lexicographicNeighbours()` should return `409511334375`.
 
 ```js
-assert.strictEqual(euler158(), 409511334375);
+assert.strictEqual(lexicographicNeighbours(), 409511334375);
 ```
 
 # --seed--
@@ -38,12 +40,12 @@ assert.strictEqual(euler158(), 409511334375);
 ## --seed-contents--
 
 ```js
-function euler158() {
+function lexicographicNeighbours() {
 
   return true;
 }
 
-euler158();
+lexicographicNeighbours();
 ```
 
 # --solutions--

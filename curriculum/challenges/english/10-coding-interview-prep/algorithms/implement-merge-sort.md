@@ -3,6 +3,7 @@ id: 587d825c367417b2b2512c8f
 title: Implement Merge Sort
 challengeType: 1
 forumTopicId: 301614
+dashedName: implement-merge-sort
 ---
 
 # --description--
@@ -18,9 +19,6 @@ Merge sort is an efficient sorting method, with time complexity of *O(nlog(n))*.
 As an aside, this will be the last sorting algorithm we cover here. However, later in the section on tree data structures we will describe heap sort, another efficient sorting method that requires a binary heap in its implementation.
 
 **Instructions:** Write a function `mergeSort` which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest. A good way to implement this is to write one function, for instance `merge`, which is responsible for merging two sorted arrays, and another function, for instance `mergeSort`, which is responsible for the recursion that produces single-item arrays to feed into merge. Good luck!
-
-**Note:**  
-We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging `array` to see your sorting algorithm in action!
 
 # --hints--
 
@@ -58,7 +56,7 @@ assert(
 );
 ```
 
-`mergeSort` should return an array that is unchanged except for order.
+`mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])` should return an array that is unchanged except for order.
 
 ```js
 assert.sameMembers(
@@ -119,8 +117,6 @@ function mergeSort(array) {
   return array;
   // Only change code above this line
 }
-
-mergeSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 # --solutions--

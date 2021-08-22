@@ -1,33 +1,30 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d8d
+title: '核心学习算法：分类'
 challengeType: 11
 videoId: qFF7ZQNvK9E
+dashedName: core-learning-algorithms-classification
 ---
 
 # --question--
 
 ## --text--
 
-What is classification?
+什么是分类？
 
 ## --answers--
 
-The process of separating data points into different classes.
+将数据点分离成不同类别的过程。
 
 ---
 
-Predicting a numeric value or forecast based on independent and dependent variables.
+根据自变量和因变量预测数值或预测。
 
 ---
 
-None of the above.
+以上都不是。
 
 ## --video-solution--
 
 1
-
-# --hints--
-
-
-# --solutions--
 

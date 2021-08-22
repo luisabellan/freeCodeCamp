@@ -3,25 +3,35 @@ id: 587d7b7d367417b2b2512b1c
 title: 检查对象是否具有某个属性
 challengeType: 1
 forumTopicId: 301155
+dashedName: check-if-an-object-has-a-property
 ---
 
 # --description--
 
-现在我们可以新增、修改和移除对象中的属性。但如果我们想知道一个对象中是否含有某个属性呢？JavaScript 为我们提供了两种不同的方式来实现这个功能，一个是`hasOwnProperty()`方法，另一个是`in`关键字。如果我们有一个`users`对象，它有一个`Alan`属性，我们可以用以下两种方式之一来检查该属性在对象中是否存在：
+我们已经学习了如何添加、修改和移除对象中的属性。 但如果我们想知道一个对象中是否包含某个属性呢？ JavaScript 为我们提供了两种不同的方式来实现这个功能： 一个是通过 `hasOwnProperty()` 方法，另一个是使用 `in` 关键字。 假如我们有一个 `users` 对象，为检查它是否含有 `Alan` 属性，可以这样写：
 
 ```js
 users.hasOwnProperty('Alan');
 'Alan' in users;
-// 都返回 true
 ```
+
+这两者结果都应该为 `true`。
 
 # --instructions--
 
-我们已经创建了一个含有一些用户的`users`对象和一个`isEveryoneHere`函数，该函数接受`users`对象作为参数。请完成该函数使其在`users`对象中包含以下 4 个键`Alan`、`Jeff`、`Sarah`和`Ryan`时才返回`true`，否则返回`false`。
+请完善这个函数，如果传递给它的对象包含四个名字 `Alan`、`Jeff`、`Sarah` 和 `Ryan`，函数返回 true，否则返回 false。
 
 # --hints--
 
-`users`对象应该只含有`Alan`、`Jeff`、`Sarah`和`Ryan`4 个键。
+不应直接访问 `users` 对象。
+
+```js 
+
+assert(code.match(/users/gm).length <= 2)
+
+```
+
+`users` 对象应该只包含 `Alan`、`Jeff`、`Sarah`、`Ryan` 4 个键。
 
 ```js
 assert(
@@ -33,13 +43,13 @@ assert(
 );
 ```
 
-`isEveryoneHere`函数在`users`对象包含`Alan`、`Jeff`、`Sarah`和`Ryan`4 个键时应该返回`true`。
+如果 `Alan`、`Jeff`、`Sarah`、`Ryan` 是传递给函数 `isEveryoneHere` 对象的属性，则函数应返回 `true`。
 
 ```js
 assert(isEveryoneHere(users) === true);
 ```
 
-`isEveryoneHere`函数在`users`对象不包含`Alan`、`Jeff`、`Sarah`或`Ryan`4 个键时应该返回`false`。
+如果传递给函数 `isEveryoneHere` 对象的属性中不包含 `Alan`，则函数返回 `false`。
 
 ```js
 assert(
@@ -50,7 +60,7 @@ assert(
 );
 ```
 
-如果 `Jeff` 不是 `users` 对象的属性，函数 `isEveryoneHere` 应该返回  `false`。
+如果传递给函数 `isEveryoneHere` 对象的属性中不包含 `Jeff`，则函数返回 `false`。
 
 ```js
 assert(
@@ -61,7 +71,7 @@ assert(
 );
 ```
 
-如果 `Sarah` 不是 `users` 对象的属性，函数 `isEveryoneHere` 应该返回  `false`。
+如果传递给函数 `isEveryoneHere` 对象的属性中不包含 `Sarah`，则函数返回 `false`。
 
 ```js
 assert(
@@ -72,7 +82,7 @@ assert(
 );
 ```
 
-如果 `Ryan` 不是 `users` 对象的属性，函数 `isEveryoneHere` 应该返回  `false`。
+如果传递给函数 `isEveryoneHere` 对象的属性中不包含 `Ryan`，则函数返回 `false`。
 
 ```js
 assert(
@@ -83,5 +93,69 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```js
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function isEveryoneHere(userObj) {
+  // Only change code below this line
+
+  // Only change code above this line
+}
+
+console.log(isEveryoneHere(users));
+```
+
 # --solutions--
 
+```js
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function isEveryoneHere(userObj) {
+  return [
+    'Alan',
+    'Jeff',
+    'Sarah',
+    'Ryan'
+  ].every(user => userObj.hasOwnProperty(user));
+}
+
+console.log(isEveryoneHere(users));
+```

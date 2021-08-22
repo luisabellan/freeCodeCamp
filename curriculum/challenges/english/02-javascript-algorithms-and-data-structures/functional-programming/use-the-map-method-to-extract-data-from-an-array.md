@@ -3,6 +3,7 @@ id: 587d7b8f367417b2b2512b61
 title: Use the map Method to Extract Data from an Array
 challengeType: 1
 forumTopicId: 18214
+dashedName: use-the-map-method-to-extract-data-from-an-array
 ---
 
 # --description--
@@ -29,12 +30,14 @@ const users = [
 ];
 
 const names = users.map(user => user.name);
-console.log(names); // [ 'John', 'Amy', 'camperCat' ]
+console.log(names);
 ```
+
+The console would display the value ` [ 'John', 'Amy', 'camperCat' ]`.
 
 # --instructions--
 
-The `watchList` array holds objects with information on several movies. Use `map` on `watchList` to assign a new array of objects with only `title` and `rating` keys to the `ratings` variable. The code in the editor currently uses a `for` loop to do this, so you should replace the loop functionality with your `map` expression.
+The `watchList` array holds objects with information on several movies. Use `map` on `watchList` to assign a new array of objects to the `ratings` variable. Each movie in the new array should have only a `title` key with the name of the film, and a `rating` key with the IMDB rating. The code in the editor currently uses a `for` loop to do this, so you should replace the loop functionality with your `map` expression.
 
 # --hints--
 
@@ -49,7 +52,7 @@ assert(
 Your code should not use a `for` loop.
 
 ```js
-assert(!__helpers.removeJSComments(code).match(/for\s*?\([\s\S]*?\)/));
+assert(!code.match(/for\s*?\([\s\S]*?\)/));
 ```
 
 Your code should use the `map` method.
@@ -86,7 +89,7 @@ var watchList = [
     "Genre": "Action, Adventure, Crime",
     "Director": "Christopher Nolan",
     "Writer": "Christopher Nolan",
-    "Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy",
+    "Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy",
     "Plot": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
     "Language": "English, Japanese, French",
     "Country": "USA, UK",
@@ -215,7 +218,7 @@ var watchList = [
     "Genre": "Action, Adventure, Crime",
     "Director": "Christopher Nolan",
     "Writer": "Christopher Nolan",
-    "Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy",
+    "Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy",
     "Plot": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
     "Language": "English, Japanese, French",
     "Country": "USA, UK",

@@ -3,25 +3,26 @@ id: 58a25bcff9fc0f352b528e7e
 title: 哈希和同步比较密码
 challengeType: 2
 forumTopicId: 301579
+dashedName: hash-and-compare-passwords-synchronously
 ---
 
 # --description--
 
-请注意，本项目在 [这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-infosec) 的基础上进行开发。你也可以从 [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) 上克隆。
+请注意，本项目在 [这个 Repl.it 项目](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt) 的基础上进行开发。 你也可以从 [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/) 上克隆。
 
-同步执行哈希运算是非常简单的，但这会在哈希计算量大并且次数多的情况下造成延迟。如果想要同步执行哈希运算，只需要这样调用：
+同步执行哈希运算是非常简单的，但这会在哈希计算量大并且次数多的情况下造成延迟。 用这个方法哈希就像调用函数一样简单。
 
 ```js
 var hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
 ```
 
-把同步哈希的方法添加到你的代码并在控制台输出。和之前一样，我们已经为你定义好了你需要使用的变量，你不需要做任何改动。你可能注意到，即使你对同一个密码进行哈希运算，同步哈希和异步哈希的结果也是不一样的。这是因为每次哈希的盐都是随机生成的，这种随机反映在前 22 个字符的不同上。 当你需要对比用户输入的值是否和之前哈希过的值一样的时候，只需要调用对比函数：
+把同步哈希的方法添加到你的代码，并在控制台输出。 和之前一样，我们已经为你定义好了你需要使用的变量，你不需要做任何改动。 你可能会注意到即使你使用与异步函数相同的密码进行哈希处理，控制台中的结果也不同，这是由于每次哈希值随机生成，如第三个哈希字符串中的前 22 个字符所示。 现在，为了比较一个密码输入和新的同步哈希值，你将使用 compareSync 方法。
 
 ```js
 var result = bcrypt.compareSync(myPlaintextPassword, hash);
 ```
 
-返回的结果为 `true` 或 `false`
+返回的结果为 true 或 false。
 
 # --instructions--
 
@@ -56,3 +57,10 @@ var result = bcrypt.compareSync(myPlaintextPassword, hash);
 
 # --solutions--
 
+```js
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
+```

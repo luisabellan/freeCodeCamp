@@ -1,14 +1,16 @@
 ---
 id: 5e7b9f050b6c005b0e76f058
+title: 根据条件执行
 challengeType: 11
 videoId: gz_IfIsZQtc
+dashedName: conditional-execution
 ---
 
 # --question--
 
 ## --text--
 
-Which code is indented correctly to print "Yes" if x = 0 and y = 10?
+以下哪个代码缩进，能够满足当“x=0”和“y=10”的时，打印 "Yes"？
 
 ## --answers--
 
@@ -45,9 +47,4 @@ if 0 == x:
 ## --video-solution--
 
 4
-
-# --hints--
-
-
-# --solutions--
 

@@ -2,6 +2,7 @@
 id: 5f356ed6cf6eab5f15f5cfe6
 title: Part 21
 challengeType: 0
+dashedName: part-21
 ---
 
 # --description--
@@ -10,10 +11,29 @@ The `div` element is used mainly for design layout purposes unlike the other con
 
 # --hints--
 
-Test 1
+You should have an opening `<div>` tag.
 
 ```js
+assert(code.match(/<div>/i));
+```
 
+You should have a closing `</div>` tag.
+
+```js
+assert(code.match(/<\/div>/i));
+```
+
+You should not change your existing `body` element. Make sure you did not delete the closing tag.
+
+```js
+assert($('body').length === 1);
+```
+
+Your `div` tag should be nested in the `body`.
+
+```js
+const div = $('div')[0];
+assert(div.parentElement.tagName === 'BODY');
 ```
 
 # --seed--
@@ -37,7 +57,7 @@ Test 1
     </header>
     <main>
       <section>
-        <h2>Coffees</h2>
+        <h2>Coffee</h2>
       </section>
     </main>
   </body>

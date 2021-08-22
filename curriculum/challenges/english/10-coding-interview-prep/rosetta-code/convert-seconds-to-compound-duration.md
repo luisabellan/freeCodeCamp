@@ -3,6 +3,7 @@ id: 596fd036dc1ab896c5db98b1
 title: Convert seconds to compound duration
 challengeType: 5
 forumTopicId: 302236
+dashedName: convert-seconds-to-compound-duration
 ---
 
 # --description--
@@ -21,7 +22,7 @@ Demonstrate that it passes the following three test-cases:
 | Input number | Output number                         |
 | ------------ | ------------------------------------- |
 | 7259         | <code>2 hr, 59 sec</code>             |
-| 728640059    | <code>1 d</code>                      |
+| 86400        | <code>1 d</code>                      |
 | 6000000      | <code>9 wk, 6 d, 10 hr, 40 min</code> |
 
 <div style="font-size:115%; font-weight: bold;">Details</div>

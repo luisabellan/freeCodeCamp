@@ -8,7 +8,8 @@ const amountsConfig = {
   onetime: [2500, 5000, 7500, 10000, 15000]
 };
 const defaultAmount = {
-  month: 500
+  month: 500,
+  onetime: 7500
 };
 const defaultDonation = {
   donationAmount: defaultAmount['month'],
@@ -53,29 +54,29 @@ const donationSubscriptionConfig = {
 const paypalConfigTypes = {
   live: {
     month: {
-      '500': { planId: 'P-1L11422374370240ULZKX3PA' },
-      '1000': { planId: 'P-61K21421WY874920PL6E36YI' },
-      '2000': { planId: 'P-31999436LF709112VL6E374A' },
-      '3000': { planId: 'P-1KY930839N8045117L6E4BKY' },
-      '4000': { planId: 'P-0JW4843250567551AL6E4CAI' },
-      '5000': { planId: 'P-0WR49877YD949401BL6E4CTA' }
+      500: { planId: 'P-1L11422374370240ULZKX3PA' },
+      1000: { planId: 'P-61K21421WY874920PL6E36YI' },
+      2000: { planId: 'P-31999436LF709112VL6E374A' },
+      3000: { planId: 'P-1KY930839N8045117L6E4BKY' },
+      4000: { planId: 'P-0JW4843250567551AL6E4CAI' },
+      5000: { planId: 'P-0WR49877YD949401BL6E4CTA' }
     }
   },
   staging: {
     month: {
-      '500': { planId: 'P-37N14480BW163382FLZYPVMA' },
-      '1000': { planId: 'P-28B62039J8092810UL6E3FXA' },
-      '2000': { planId: 'P-7HR706961M9170433L6HI5VI' },
-      '3000': { planId: 'P-35V33574BU596924JL6HI6XY' },
-      '4000': { planId: 'P-45M45060289267734L6HJSXA' },
-      '5000': { planId: 'P-0MD70861FY4172444L6HJTUQ' }
+      500: { planId: 'P-37N14480BW163382FLZYPVMA' },
+      1000: { planId: 'P-28B62039J8092810UL6E3FXA' },
+      2000: { planId: 'P-7HR706961M9170433L6HI5VI' },
+      3000: { planId: 'P-35V33574BU596924JL6HI6XY' },
+      4000: { planId: 'P-45M45060289267734L6HJSXA' },
+      5000: { planId: 'P-0MD70861FY4172444L6HJTUQ' }
     }
   }
 };
 
 const paypalConfigurator = (donationAmount, donationDuration, paypalConfig) => {
   if (donationDuration === 'onetime') {
-    return { amount: donationAmount, duration: donationDuration };
+    return { amount: donationAmount, duration: donationDuration, planId: null };
   }
   return {
     amount: donationAmount,

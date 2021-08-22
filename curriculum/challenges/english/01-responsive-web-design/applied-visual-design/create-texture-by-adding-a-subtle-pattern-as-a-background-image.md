@@ -4,6 +4,7 @@ title: Create Texture by Adding a Subtle Pattern as a Background Image
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cQdwJC8'
 forumTopicId: 301052
+dashedName: create-texture-by-adding-a-subtle-pattern-as-a-background-image
 ---
 
 # --description--
@@ -21,7 +22,7 @@ Your `body` element should have a `background` property set to a `url()` with th
 ```js
 assert(
   code.match(
-    /background:\s*?url\(\s*("|'|)https:\/\/cdn-media-1\.freecodecamp\.org\/imgr\/MJAkxbh\.png\1\s*\)/gi
+    /background(-image)?:\s*?url\(\s*("|'|)https:\/\/cdn-media-1\.freecodecamp\.org\/imgr\/MJAkxbh\.png\2\s*\)/gi
   )
 );
 ```

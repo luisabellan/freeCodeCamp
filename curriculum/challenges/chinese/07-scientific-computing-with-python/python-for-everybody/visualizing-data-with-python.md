@@ -1,41 +1,38 @@
 ---
 id: 5e7b9f690b6c005b0e76f095
+title: 使用 Python 可视化数据
 challengeType: 11
 videoId: e3lydkH0prw
+dashedName: visualizing-data-with-python
 ---
 
 # --question--
 
 ## --text--
 
-Most data needs to be **\_\_** before using it.
+大多数数据在使用之前需要 \_\_\_\_\_\_ 。
 
 ## --answers--
 
-converted to JSON format
+转换为 JSON 格式
 
 ---
 
-graphed
+图形化
 
 ---
 
-cleaned
+清理
 
 ---
 
-memorized
+记忆
 
 ---
 
-turned into song
+转化成歌曲
 
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

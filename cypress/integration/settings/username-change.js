@@ -2,8 +2,7 @@
 
 describe('Username input field', () => {
   beforeEach(() => {
-    cy.visit('/');
-    cy.contains("Get started (it's free)").click({ force: true });
+    cy.login();
     cy.visit('/settings');
 
     // Setting aliases here
@@ -35,7 +34,7 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('brad', { force: true });
 
-    cy.contains('Username is available.')
+    cy.contains('Username is available')
       .should('be.visible')
       .should('have.attr', 'role', 'alert')
       // We are checking for classes here to check for proper styling
@@ -75,7 +74,7 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('twaha', { force: true });
 
-    cy.contains('Username not available.')
+    cy.contains('Username not available')
       .should('be.visible')
       .should('have.attr', 'role', 'alert')
       // We are checking for classes here to check for proper styling
@@ -89,16 +88,14 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('twaha', { force: true });
 
-    cy.contains('Username is available.').should('not.exist');
-    cy.contains('Username not available.').should('not.exist');
+    cy.contains('Username is available').should('not.exist');
+    cy.contains('Username not available').should('not.exist');
     cy.contains(
       'Please note, changing your username will also change ' +
         'the URL to your profile and your certifications.'
     ).should('not.exist');
 
-    cy.get('@usernameForm')
-      .contains('Save')
-      .should('be.disabled');
+    cy.get('@usernameForm').contains('Save').should('be.disabled');
   });
 
   it('Should not show anything if user types their current name', () => {
@@ -106,9 +103,7 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('developmentuser', { force: true });
 
-    cy.get('@usernameForm')
-      .contains('Save')
-      .should('be.disabled');
+    cy.get('@usernameForm').contains('Save').should('be.disabled');
   });
 
   // eslint-disable-next-line max-len
@@ -117,9 +112,7 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('developmentuser', { force: true });
 
-    cy.get('@usernameForm')
-      .contains('Save')
-      .should('be.disabled');
+    cy.get('@usernameForm').contains('Save').should('be.disabled');
   });
 
   it('Should show warning if username includes invalid character', () => {
@@ -127,7 +120,7 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('Quincy Larson', { force: true });
 
-    cy.contains('Username contains invalid characters.')
+    cy.contains('Username "Quincy Larson" contains invalid characters')
       .should('be.visible')
       .should('have.attr', 'role', 'alert')
       // We are checking for classes here to check for proper styling
@@ -141,9 +134,7 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('Quincy Larson', { force: true });
 
-    cy.get('@usernameForm')
-      .contains('Save')
-      .should('be.disabled');
+    cy.get('@usernameForm').contains('Save').should('be.disabled');
   });
 
   it('Should change username if `Save` button is clicked', () => {
@@ -151,11 +142,9 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('quincy', { force: true });
 
-    cy.contains('Username is available.');
+    cy.contains('Username is available');
 
-    cy.get('@usernameForm')
-      .contains('Save')
-      .click({ force: true });
+    cy.get('@usernameForm').contains('Save').click({ force: true });
     cy.contains('Account Settings for quincy').should('be.visible');
 
     cy.resetUsername();
@@ -165,7 +154,7 @@ describe('Username input field', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('nhcarrigan', { force: true });
-    cy.contains('Username is available.');
+    cy.contains('Username is available');
     cy.get('@usernameInput').type('{enter}', { force: true, release: false });
 
     cy.contains('We have updated your username to nhcarrigan')
@@ -184,7 +173,7 @@ describe('Username input field', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('bjorno', { force: true });
-    cy.contains('Username is available.');
+    cy.contains('Username is available');
     cy.get('@usernameInput').type('{enter}', { force: true, release: false });
 
     cy.contains('We have updated your username to bjorno').within(() => {
@@ -200,12 +189,30 @@ describe('Username input field', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('symbol', { force: true });
-    cy.contains('Username is available.');
+    cy.contains('Username is available');
 
     cy.get('@usernameInput').type('{enter}', { force: true, release: false });
 
     cy.contains('Account Settings for symbol').should('be.visible');
 
     cy.resetUsername();
+  });
+  it('Should show warning if username includes uppercase characters', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('QuincyLarson', { force: true });
+
+    cy.contains('Username "QuincyLarson" must be lowercase')
+      .should('be.visible')
+      .should('have.attr', 'role', 'alert')
+      .should('have.class', 'alert alert-danger');
+  });
+
+  it('Should not be able to click the `Save` button if username includes uppercase characters', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('QuincyLarson', { force: true });
+
+    cy.get('@usernameForm').contains('Save').should('be.disabled');
   });
 });

@@ -1,20 +1,25 @@
 ---
 id: 5e9a093a74c4063ca6f7c155
+title: Numpy 的运算
 challengeType: 11
 videoId: eqSVcJbaPdk
+dashedName: numpy-operations
 ---
 
 # --description--
 
-More resources:
+*在视频中我们使用的编辑器工具是在 notebook.ai 这个平台，你也可以选择用其他的平台，比如说 Google Colab 也是一个不错的选择。*
 
-\- [Notebook](https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-numpy-6c285b74)
+更多资源：
+
+-   [在 GitHub 平台的 Notebooks](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-numpy)
+-   [如何使用 Google Colab 来打开 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What is the value of `a` after you run the following code?
+运行以下代码后， `a` 的值是多少？
 
 ```py
 a = np.arange(5)
@@ -42,9 +47,4 @@ a + 20
 ## --video-solution--
 
 2
-
-# --hints--
-
-
-# --solutions--
 

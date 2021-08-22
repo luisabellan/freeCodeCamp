@@ -1,21 +1,23 @@
 ---
 id: 5e9a0a8e09c5df3cc3600eda
+title: 加载数据和高级索引
 challengeType: 11
 videoId: tUdBZ7pF8Jg
+dashedName: loading-data-and-advanced-indexing
 ---
 
 # --question--
 
 ## --text--
 
-Given a file named `data.txt` with these contents:
+给定一个名为 `data.txt` 的文件，其中包含以下内容：
 
-```
+<pre>
 29,97,32,100,45
 15,88,5,75,22
-```
+</pre>
 
-What code would produce the following array?
+哪段代码会生成下面的数组？
 
 ```py
 [29. 32. 45. 15.  5. 22.]
@@ -51,9 +53,4 @@ print(output)
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

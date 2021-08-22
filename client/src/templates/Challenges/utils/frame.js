@@ -1,4 +1,4 @@
-import { toString, flow } from 'lodash';
+import { toString, flow } from 'lodash-es';
 import { format } from '../../../utils/format';
 
 // we use two different frames to make them all essentially pure functions
@@ -49,7 +49,7 @@ const createHeader = (id = mainId) => `
   </script>
 `;
 
-export const runTestInTestFrame = async function(document, test, timeout) {
+export const runTestInTestFrame = async function (document, test, timeout) {
   const { contentDocument: frame } = document.getElementById(testId);
   return await Promise.race([
     new Promise((_, reject) => setTimeout(() => reject('timeout'), timeout)),
@@ -67,22 +67,24 @@ const createFrame = (document, id) => ctx => {
 };
 
 const hiddenFrameClassName = 'hide-test-frame';
-const mountFrame = document => ({ element, ...rest }) => {
-  const oldFrame = document.getElementById(element.id);
-  if (oldFrame) {
-    element.className = oldFrame.className || hiddenFrameClassName;
-    oldFrame.parentNode.replaceChild(element, oldFrame);
-  } else {
-    element.className = hiddenFrameClassName;
-    document.body.appendChild(element);
-  }
-  return {
-    ...rest,
-    element,
-    document: element.contentDocument,
-    window: element.contentWindow
+const mountFrame =
+  document =>
+  ({ element, ...rest }) => {
+    const oldFrame = document.getElementById(element.id);
+    if (oldFrame) {
+      element.className = oldFrame.className || hiddenFrameClassName;
+      oldFrame.parentNode.replaceChild(element, oldFrame);
+    } else {
+      element.className = hiddenFrameClassName;
+      document.body.appendChild(element);
+    }
+    return {
+      ...rest,
+      element,
+      document: element.contentDocument,
+      window: element.contentWindow
+    };
   };
-};
 
 const buildProxyConsole = proxyLogger => ctx => {
   const oldLog = ctx.window.console.log.bind(ctx.window.console);
@@ -115,7 +117,7 @@ const initMainFrame = (frameReady, proxyLogger) => ctx => {
     // Overwriting the onerror added by createHeader to catch any errors thrown
     // after the frame is ready. It has to be overwritten, as proxyLogger cannot
     // be added as part of createHeader.
-    ctx.window.onerror = function(msg) {
+    ctx.window.onerror = function (msg) {
       var string = msg.toLowerCase();
       if (string.includes('script error')) {
         msg = 'Error, open your browser console to learn more.';

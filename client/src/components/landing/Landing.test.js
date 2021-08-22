@@ -1,16 +1,17 @@
-/* global expect */
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
-import { IndexPage } from '../../pages';
 import mockChallengeNodes from '../../__mocks__/challenge-nodes';
+import IndexPage from '../../pages';
+
+jest.mock('../../analytics');
 
 describe('<Landing />', () => {
   it('renders when visiting index page and logged out', () => {
     const shallow = new ShallowRenderer();
     shallow.render(<IndexPage {...loggedOutProps} />);
-    const result = shallow.getRenderOutput();
-    expect(result.type.displayName === 'Landing').toBeTruthy();
+    const view = shallow.getRenderOutput();
+    expect(view.type.displayName === 'Landing').toBeTruthy();
   });
 });
 

@@ -2,6 +2,7 @@
 id: 5f356ed63e0fa262326eef05
 title: Part 24
 challengeType: 0
+dashedName: part-24
 ---
 
 # --description--
@@ -10,10 +11,18 @@ Now make the background color of the `div` element to be `burlywood`.
 
 # --hints--
 
-Test 1
+You should set the `background-color` property to `burlywood`.
 
 ```js
+const hasBackgroundColor = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['background-color'] === 'burlywood');
+assert(hasBackgroundColor);
+```
 
+Your `div` should have a burlywood background.
+
+```js
+const divBackground = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('background-color');
+assert(divBackground === 'burlywood');
 ```
 
 # --seed--
@@ -37,7 +46,7 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
         </section>
       </main>
     </div>

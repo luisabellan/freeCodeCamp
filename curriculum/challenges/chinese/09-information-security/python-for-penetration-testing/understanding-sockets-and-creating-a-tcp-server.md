@@ -1,14 +1,16 @@
 ---
 id: 5ea9997bbec2e9bc47e94daf
+title: 了解套接字并创建 TCP 服务器
 challengeType: 11
 videoId: F1QI9tNuDQg
+dashedName: understanding-sockets-and-creating-a-tcp-server
 ---
 
 # --question--
 
 ## --text--
 
-Which of the following functions creates a socket object?
+以下哪个函数创建套接字对象？
 
 ## --answers--
 
@@ -25,9 +27,4 @@ Which of the following functions creates a socket object?
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

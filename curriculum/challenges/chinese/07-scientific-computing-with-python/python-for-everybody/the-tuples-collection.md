@@ -1,14 +1,16 @@
 ---
 id: 5e7b9f0a0b6c005b0e76f06c
+title: 元组集合
 challengeType: 11
 videoId: 3Lxpladfh2k
+dashedName: the-tuples-collection
 ---
 
 # --question--
 
 ## --text--
 
-What will the following code print?:
+这些代码会打印出什么？
 
 ```python
 d = dict()
@@ -21,42 +23,37 @@ for (k,i) in d.items():
 
 ## --answers--
 
+<pre>
 k i
-
 k i
-
 k i
+</pre>
 
 ---
 
+<pre>
 quincy 0
-
 beau 1
-
 kris 2
+</pre>
 
 ---
 
+<pre>
 quincy 1
-
 beau 5
-
 kris 9
+</pre>
 
 ---
 
+<pre>
 1 quincy
-
 5 beau
-
 9 kris
+</pre>
 
 ## --video-solution--
 
 3
-
-# --hints--
-
-
-# --solutions--
 

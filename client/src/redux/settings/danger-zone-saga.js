@@ -1,10 +1,11 @@
 import { navigate } from 'gatsby';
 import { call, put, takeEvery, take } from 'redux-saga/effects';
 
-import { deleteAccountError, resetProgressError } from './';
-import { resetUserData, fetchUser, types as appTypes } from '../';
-import { postResetProgress, postDeleteAccount } from '../../utils/ajax';
+import { resetUserData, fetchUser } from '../';
 import { createFlashMessage } from '../../components/Flash/redux';
+import { postResetProgress, postDeleteAccount } from '../../utils/ajax';
+import { actionTypes as appTypes } from '../action-types';
+import { deleteAccountError, resetProgressError } from './';
 
 function* deleteAccountSaga() {
   try {
@@ -12,7 +13,7 @@ function* deleteAccountSaga() {
     yield put(
       createFlashMessage({
         type: 'info',
-        message: 'Your account has been successfully deleted'
+        message: 'flash.account-deleted'
       })
     );
     // remove current user information from application state
@@ -29,7 +30,7 @@ function* resetProgressSaga() {
     yield put(
       createFlashMessage({
         type: 'info',
-        message: 'Your progress has been reset'
+        message: 'flash.progress-reset'
       })
     );
     // refresh current user data in application state

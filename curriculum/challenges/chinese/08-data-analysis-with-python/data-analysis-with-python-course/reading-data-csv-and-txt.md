@@ -1,26 +1,25 @@
 ---
 id: 5e9a093a74c4063ca6f7c162
+title: 从 CSV 和 TXT 中读取数据
 challengeType: 11
 videoId: ViGEv0zOzUk
+dashedName: reading-data-csv-and-txt
 ---
 
 # --description--
 
-More resources:
+*在视频中我们使用的编辑器工具是在 notebook.ai 这个平台，你也可以选择用其他的平台，比如说 Google Colab 也是一个不错的选择。*
 
-\- [Reading CSVs Notebook](https://notebooks.ai/rmotr-curriculum/rdp-reading-csv-and-txt-files-fb829f46)
+以下有更多的资料：
 
-\- [Reading SQL](https://notebooks.ai/rmotr-curriculum/rdp-reading-data-from-relational-databases-2a3a889b)
-
-\- [Reading HTML](https://notebooks.ai/rmotr-curriculum/rdp-reading-html-tables-eb9cca73)
-
-\- [Reading Excel files](https://notebooks.ai/rmotr-curriculum/rdp-reading-excel-files-a6b99973)
+-   [在 GitHub 平台的 Notebooks](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas/tree/master/unit-1-reading-data-with-python-and-pandas/lesson-1-reading-csv-and-txt-files/files)
+-   [如何使用 Google Colab 来打开 GitHub 上的 Notebooks](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-How would you import the CSV file `data.csv` and store it in a DataFrame using the Pandas module?
+你如何使用 Pandas 模块导入 CSV 文件 `data.csv` 并且存储到 DataFrame 中？
 
 ## --answers--
 
@@ -53,9 +52,4 @@ df = pd.csv_reader("data.csv")
 ## --video-solution--
 
 2
-
-# --hints--
-
-
-# --solutions--
 

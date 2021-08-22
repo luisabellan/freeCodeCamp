@@ -2,6 +2,7 @@
 id: 5f3477ae34c1239cafe128be
 title: Part 14
 challengeType: 0
+dashedName: part-14
 ---
 
 # --description--
@@ -18,10 +19,18 @@ Use a single type selector to center the `h1`, `h2` and `p` elements at the same
 
 # --hints--
 
-Test 1
+You should use a single type selector for all three elements, `h1, h2, p`. Be sure to use that order.
 
 ```js
+const hasSelector = new __helpers.CSSHelp(document).getStyle('h1, h2, p');
+assert(hasSelector);
+```
 
+You should only have one selector in your `style` element.
+
+```js
+const selectors = new __helpers.CSSHelp(document).getCSSRules().filter(x => x.selectorText)
+assert(selectors.length === 1);
 ```
 
 # --seed--
@@ -55,7 +64,7 @@ Test 1
     </header>
     <main>
       <section>
-        <h2>Coffees</h2>
+        <h2>Coffee</h2>
       </section>
     </main>
   </body>

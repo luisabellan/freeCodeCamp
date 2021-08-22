@@ -2,6 +2,7 @@
 id: 5f356ed60785e1f3e9850b6e
 title: Part 25
 challengeType: 0
+dashedName: part-25
 ---
 
 # --description--
@@ -10,10 +11,18 @@ Now it's easy to see that the text is centered inside the `div` element. Current
 
 # --hints--
 
-Test 1
+You should set the `width` property to `80%`.
 
 ```js
+const hasWidth = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.width === '80%');
+assert(hasWidth);
+```
 
+You should not have a `width` property of `300px`.
+
+```js
+const hasWidth = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.width === '300px');
+assert(!hasWidth);
 ```
 
 # --seed--
@@ -37,7 +46,7 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
         </section>
       </main>
     </div>

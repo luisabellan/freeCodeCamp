@@ -1,13 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
-import Helmet from 'react-helmet';
 import { Grid, ListGroup, ListGroupItem } from '@freecodecamp/react-bootstrap';
+import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import Helmet from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 
-import LearnLayout from '../../components/layouts/Learn';
-import FullWidthRow from '../../components/helpers/FullWidthRow';
-import ButtonSpacer from '../../components/helpers/ButtonSpacer';
-import { MarkdownRemark, AllChallengeNode } from '../../redux/propTypes';
+import ButtonSpacer from '../../components/helpers/button-spacer';
+import FullWidthRow from '../../components/helpers/full-width-row';
+import LearnLayout from '../../components/layouts/learn';
+import { MarkdownRemark, AllChallengeNode } from '../../redux/prop-types';
 
 import './intro.css';
 
@@ -29,6 +30,7 @@ function renderMenuItems({ edges = [] }) {
 }
 
 function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
+  const { t } = useTranslation();
   const {
     html,
     frontmatter: { block }
@@ -37,6 +39,7 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
   const firstLessonPath = firstLesson
     ? firstLesson.fields.slug
     : '/strange-place';
+
   return (
     <LearnLayout>
       <Helmet>
@@ -54,17 +57,17 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
             className='btn btn-lg btn-primary btn-block'
             to={firstLessonPath}
           >
-            Go to the first lesson
+            {t('buttons.first-lesson')}
           </Link>
           <ButtonSpacer />
           <Link className='btn btn-lg btn-primary btn-block' to='/learn'>
-            View the curriculum
+            {t('buttons.view-curriculum')}
           </Link>
           <ButtonSpacer />
           <hr />
         </FullWidthRow>
         <FullWidthRow>
-          <h2 className='intro-toc-title'>Upcoming Lessons</h2>
+          <h2 className='intro-toc-title'>{t('learn.upcoming-lessons')}</h2>
           <ListGroup className='intro-toc'>
             {allChallengeNode ? renderMenuItems(allChallengeNode) : null}
           </ListGroup>

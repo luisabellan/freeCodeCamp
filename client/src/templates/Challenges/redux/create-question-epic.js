@@ -1,79 +1,84 @@
 import dedent from 'dedent';
+import i18next from 'i18next';
 import { ofType } from 'redux-observable';
+import { tap, mapTo } from 'rxjs/operators';
+import envData from '../../../../../config/env.json';
 import {
-  types,
   closeModal,
   challengeFilesSelector,
-  challengeMetaSelector
+  challengeMetaSelector,
+  projectFormValuesSelector
 } from '../redux';
-import { tap, mapTo } from 'rxjs/operators';
-import { forumLocation } from '../../../../../config/env.json';
+import { transformEditorLink } from '../utils';
+import { actionTypes } from './action-types';
 
-function filesToMarkdown(files = {}) {
-  const moreThenOneFile = Object.keys(files).length > 1;
-  return Object.keys(files).reduce((fileString, key) => {
-    const file = files[key];
-    if (!file) {
+const { forumLocation } = envData;
+
+function filesToMarkdown(challengeFiles = {}) {
+  const moreThanOneFile = challengeFiles?.length > 1;
+  return challengeFiles.reduce((fileString, challengeFile) => {
+    if (!challengeFile) {
       return fileString;
     }
-    const fileName = moreThenOneFile ? `\\ file: ${file.contents}` : '';
-    const fileType = file.ext;
-    return `${fileString}\`\`\`${fileType}\n${fileName}\n${file.contents}\n\`\`\`\n\n`;
+    const fileName = moreThanOneFile
+      ? `\\ file: ${challengeFile.contents}`
+      : '';
+    const fileType = challengeFile.ext;
+    return `${fileString}\`\`\`${fileType}\n${fileName}\n${challengeFile.contents}\n\`\`\`\n\n`;
   }, '\n');
 }
 
 function createQuestionEpic(action$, state$, { window }) {
   return action$.pipe(
-    ofType(types.createQuestion),
+    ofType(actionTypes.createQuestion),
     tap(() => {
       const state = state$.value;
-      const files = challengeFilesSelector(state);
-      const { title: challengeTitle, helpCategory } = challengeMetaSelector(
-        state
-      );
+      const challengeFiles = challengeFilesSelector(state);
+      const { title: challengeTitle, helpCategory } =
+        challengeMetaSelector(state);
       const {
         navigator: { userAgent },
         location: { href }
       } = window;
-
+      const projectFormValues = Object.entries(
+        projectFormValuesSelector(state)
+      );
       const endingText = dedent(
-        `**Your browser information:**
-
-        User Agent is: <code>${userAgent}</code>.
-
-        **Challenge:** ${challengeTitle}
-
-        **Link to the challenge:**
-        ${href}`
+        `${i18next.t('forum-help.browser-info')}\n\n${i18next.t(
+          'forum-help.user-agent',
+          { userAgent }
+        )}\n\n${i18next.t(
+          'forum-help.challenge'
+        )} ${challengeTitle}\n\n${i18next.t(
+          'forum-help.challenge-link'
+        )}\n${href}`
       );
 
-      let textMessage = dedent(
-        `**Tell us what's happening:**\n\n\n\n**Your code so far**
-        ${filesToMarkdown(files)}\n${endingText}`
-      );
+      let textMessage = dedent(`${i18next.t(
+        'forum-help.whats-happening'
+      )}\n${i18next.t('forum-help.describe')}\n\n
+        ${
+          projectFormValues.length
+            ? `${i18next.t('forum-help.camper-project')}\n`
+            : i18next.t('forum-help.camper-code')
+        }
+        ${
+          projectFormValues
+            ?.map(([key, val]) => `${key}: ${transformEditorLink(val)}\n`)
+            ?.join('') || filesToMarkdown(challengeFiles)
+        }\n\n
+        ${endingText}`);
 
       const altTextMessage = dedent(
-        `**Tell us what's happening:**
-
-
-
-        **Your code so far**
-
-        WARNING
-
-        The challenge seed code and/or your solution exceeded the maximum length we can port over from the challenge.
-
-        You will need to take an additional step here so the code you wrote presents in an easy to read format.
-
-        Please copy/paste all the editor code showing in the challenge from where you just linked.
-
-        \`\`\`
-
-        Replace these two sentences with your copied code.
-        Please leave the \`\`\` line above and the \`\`\` line below,
-        because they allow your code to properly format in the post.
-
-        \`\`\`\n${endingText}`
+        `${i18next.t('forum-help.whats-happening')}\n\n\n\n${i18next.t(
+          'forum-help.camper-code'
+        )}\n\n${i18next.t('forum-help.warning')}\n\n${i18next.t(
+          'forum-help.too-long-one'
+        )}\n\n${i18next.t('forum-help.too-long-two')}\n\n${i18next.t(
+          'forum-help.too-long-three'
+        )}\n\n\`\`\`\n${i18next.t('forum-help.add-code-one')}\n${i18next.t(
+          'forum-help.add-code-two'
+        )}\n${i18next.t('forum-help.add-code-three')}\n\n\`\`\`\n${endingText}`
       );
 
       const category = window.encodeURIComponent(helpCategory || 'Help');

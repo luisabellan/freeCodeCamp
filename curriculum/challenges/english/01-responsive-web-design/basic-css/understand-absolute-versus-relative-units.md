@@ -4,6 +4,7 @@ title: Understand Absolute versus Relative Units
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN66JSL'
 forumTopicId: 301089
+dashedName: understand-absolute-versus-relative-units
 ---
 
 # --description--
@@ -36,7 +37,7 @@ assert(
 Your `red-box` class should give elements 1.5em of `padding`.
 
 ```js
-assert(code.match(/\.red-box\s*?{[\s\S]*padding:\s*?1\.5em/gi));
+assert(code.match(/\.red-box\s*?{[\s\S]*padding\s*:\s*?1\.5em/gi));
 ```
 
 # --seed--

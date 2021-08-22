@@ -2,6 +2,7 @@
 id: 5f769702e6e33127d14aa120
 title: Part 36
 challengeType: 0
+dashedName: part-36
 ---
 
 # --description--
@@ -10,10 +11,22 @@ Now align the text to the `right` for the elements with the `price` class.
 
 # --hints--
 
-Test 1
+You should have a `price` class selector.
 
 ```js
+assert(code.match(/\.price\s*{/i));
+```
 
+Your `price` class selector should set the `text-align` property to `right`.
+
+```js
+assert(code.match(/\.price\s*{\s*text-align:\s*right;?/i));
+```
+
+Your `.price` element should be aligned to the right.
+
+```js
+assert($('.price').css('text-align') === 'right');
 ```
 
 # --seed--
@@ -37,13 +50,13 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article>
             <p class="flavor">French Vanilla</p>
             <p class="price">3.00</p>
           </article>
           <article>
-            <p>Carmel Macchiato</p>
+            <p>Caramel Macchiato</p>
             <p>3.75</p>
           </article>
           <article>
@@ -67,7 +80,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {
@@ -88,5 +101,6 @@ h1, h2, p {
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```
 

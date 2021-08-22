@@ -1,9 +1,11 @@
-const env = require('../config/env');
-
 const { createFilePath } = require('gatsby-source-filesystem');
+// TODO: ideally we'd remove lodash and just use lodash-es, but we can't require
+// es modules here.
 const uniq = require('lodash/uniq');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+const webpack = require('webpack');
+const env = require('../config/env.json');
 
-const { dasherize } = require('../utils/slugs');
 const { blockNameify } = require('../utils/block-nameify');
 const {
   createChallengePages,
@@ -20,9 +22,7 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   const { createNodeField } = actions;
   if (node.internal.type === 'ChallengeNode') {
     const { tests = [], block, dashedName, superBlock } = node;
-    const slug = `/learn/${dasherize(superBlock)}/${dasherize(
-      block
-    )}/${dashedName}`;
+    const slug = `/learn/${superBlock}/${block}/${dashedName}`;
     createNodeField({ node, name: 'slug', value: slug });
     createNodeField({ node, name: 'blockName', value: blockNameify(block) });
     createNodeField({ node, name: 'tests', value: tests });
@@ -58,10 +58,11 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
       throw new Error('Stripe public key is required to start the client!');
     } else {
       reporter.info(
-        'Stripe public key missing or invalid. Required for donations.'
+        'Stripe public key is missing or invalid. Required for Stripe integration.'
       );
     }
   }
+
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
@@ -131,35 +132,32 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
           result.data.allChallengeNode.edges.map(
             ({ node: { superBlock } }) => superBlock
           )
-        ).map(superBlock => blockNameify(superBlock));
+        );
 
         // Create intro pages
+        // TODO: Remove allMarkdownRemark (populate from elsewhere)
         result.data.allMarkdownRemark.edges.forEach(edge => {
           const {
             node: { frontmatter, fields }
           } = edge;
 
           if (!fields) {
-            return null;
+            return;
           }
           const { slug, nodeIdentity } = fields;
           if (slug.includes('LICENCE')) {
-            return null;
+            return;
           }
           try {
             if (nodeIdentity === 'blockIntroMarkdown') {
-              if (!blocks.some(block => block === frontmatter.block)) {
-                return null;
+              if (!blocks.includes(frontmatter.block)) {
+                return;
               }
-            } else if (
-              !superBlocks.some(
-                superBlock => superBlock === frontmatter.superBlock
-              )
-            ) {
-              return null;
+            } else if (!superBlocks.includes(frontmatter.superBlock)) {
+              return;
             }
             const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
-            return pageBuilder(edge);
+            pageBuilder(edge);
           } catch (e) {
             console.log(`
             ident: ${nodeIdentity} does not belong to a function
@@ -169,7 +167,6 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
 
             `);
           }
-          return null;
         });
 
         return null;
@@ -178,26 +175,36 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
   });
 };
 
-const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
-
-exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
   const newPlugins = [
-    plugins.define({
-      HOME_PATH: JSON.stringify(
-        process.env.HOME_PATH || 'http://localhost:3000'
-      ),
-      STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || '')
+    // We add the shims of the node globals to the global scope
+    new webpack.ProvidePlugin({
+      Buffer: ['buffer', 'Buffer']
+    }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser'
     })
   ];
   // The monaco editor relies on some browser only globals so should not be
   // involved in SSR. Also, if the plugin is used during the 'build-html' stage
   // it overwrites the minfied files with ordinary ones.
   if (stage !== 'build-html') {
-    newPlugins.push(new MonacoWebpackPlugin());
+    newPlugins.push(
+      new MonacoWebpackPlugin({ filename: '[name].worker-[contenthash].js' })
+    );
   }
   actions.setWebpackConfig({
-    node: {
-      fs: 'empty'
+    resolve: {
+      fallback: {
+        fs: false,
+        path: require.resolve('path-browserify'),
+        assert: require.resolve('assert'),
+        crypto: require.resolve('crypto-browserify'),
+        util: false,
+        buffer: require.resolve('buffer'),
+        stream: require.resolve('stream-browserify'),
+        process: require.resolve('process/browser')
+      }
     },
     plugins: newPlugins
   });
@@ -215,10 +222,6 @@ exports.onCreateBabelConfig = ({ actions }) => {
     options: {
       '@freecodecamp/react-bootstrap': {
         transform: '@freecodecamp/react-bootstrap/lib/${member}',
-        preventFullImport: true
-      },
-      lodash: {
-        transform: 'lodash/${member}',
         preventFullImport: true
       }
     }
@@ -241,16 +244,11 @@ exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
     type ChallengeNode implements Node {
-      files: ChallengeFile
-    }
-    type ChallengeFile {
-      indexcss: FileContents
-      indexhtml: FileContents
-      indexjs: FileContents
-      indexjsx: FileContents
+      challengeFiles: [FileContents]
+      url: String
     }
     type FileContents {
-      key: String
+      fileKey: String
       ext: String
       name: String
       contents: String

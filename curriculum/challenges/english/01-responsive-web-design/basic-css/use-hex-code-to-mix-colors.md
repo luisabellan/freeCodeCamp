@@ -4,6 +4,7 @@ title: Use Hex Code to Mix Colors
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cK89PhP'
 forumTopicId: 18359
+dashedName: use-hex-code-to-mix-colors
 ---
 
 # --description--
@@ -35,7 +36,7 @@ assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 The `hex code` for the color red should be used instead of the word `red`.
 
 ```js
-assert(code.match(/\.red-text\s*?{\s*?color:\s*?(#FF0000|#F00)\s*?;\s*?}/gi));
+assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?(#FF0000|#F00)\s*?;?\s*?}/gi));
 ```
 
 Your `h1` element with the text `I am green!` should be given the `color` green.
@@ -47,7 +48,7 @@ assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
 The `hex code` for the color green should be used instead of the word `green`.
 
 ```js
-assert(code.match(/\.green-text\s*?{\s*?color:\s*?(#00FF00|#0F0)\s*?;\s*?}/gi));
+assert(code.match(/\.green-text\s*?{\s*?color\s*:\s*?(#00FF00|#0F0)\s*?;?\s*?}/gi));
 ```
 
 Your `h1` element with the text `I am dodger blue!` should be given the `color` dodger blue.
@@ -59,7 +60,7 @@ assert($('.dodger-blue-text').css('color') === 'rgb(30, 144, 255)');
 The `hex code` for the color dodger blue should be used instead of the word `dodgerblue`.
 
 ```js
-assert(code.match(/\.dodger-blue-text\s*?{\s*?color:\s*?#1E90FF\s*?;\s*?}/gi));
+assert(code.match(/\.dodger-blue-text\s*?{\s*?color\s*:\s*?#1E90FF\s*?;?\s*?}/gi));
 ```
 
 Your `h1` element with the text `I am orange!` should be given the `color` orange.
@@ -71,7 +72,7 @@ assert($('.orange-text').css('color') === 'rgb(255, 165, 0)');
 The `hex code` for the color orange should be used instead of the word `orange`.
 
 ```js
-assert(code.match(/\.orange-text\s*?{\s*?color:\s*?#FFA500\s*?;\s*?}/gi));
+assert(code.match(/\.orange-text\s*?{\s*?color\s*:\s*?#FFA500\s*?;?\s*?}/gi));
 ```
 
 # --seed--

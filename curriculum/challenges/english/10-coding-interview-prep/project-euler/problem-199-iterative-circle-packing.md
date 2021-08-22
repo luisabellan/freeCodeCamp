@@ -3,6 +3,7 @@ id: 5900f4341000cf542c50ff46
 title: 'Problem 199: Iterative Circle Packing'
 challengeType: 5
 forumTopicId: 301837
+dashedName: problem-199-iterative-circle-packing
 ---
 
 # --description--
@@ -23,13 +24,13 @@ What fraction of the area is not covered by circles after `n` iterations? Give y
 assert(typeof iterativeCirclePacking(10) === 'number');
 ```
 
-`iterativeCirclePacking(10)` should return 0.00396087.
+`iterativeCirclePacking(10)` should return `0.00396087`.
 
 ```js
 assert.strictEqual(iterativeCirclePacking(10), 0.00396087);
 ```
 
-`iterativeCirclePacking(3)` should return 0.06790342.
+`iterativeCirclePacking(3)` should return `0.06790342`.
 
 ```js
 assert.strictEqual(iterativeCirclePacking(3), 0.06790342);
@@ -59,7 +60,7 @@ function iterativeCirclePacking(n) {
   a1 += 3 * getArea(k0, k1, k1, n);
   a1 += getArea(k1, k1, k1, n);
   let final = ((a0 - a1) / a0).toFixed(8);
-  
+
   return parseFloat(final);
   function getArea(k1, k2, k3, depth) {
       if (depth == 0) return 0.0;

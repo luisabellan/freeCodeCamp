@@ -4,6 +4,7 @@ title: Introduction to HTML5 Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cBkZGpt7'
 forumTopicId: 301097
+dashedName: introduction-to-html5-elements
 ---
 
 # --description--
@@ -25,9 +26,9 @@ Example usage, a `main` element with two child elements nested inside it:
 
 # --instructions--
 
-Create a second `p` element after the existing `p` element with the following kitty ipsum text: `Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
+Create a second `p` element with the following kitty ipsum text: `Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
 
-Then, create a `main` element and nest the two `p` elements inside the `main` element.
+Then, create a `main` element and nest only the two `p` elements inside the `main` element.
 
 # --hints--
 
@@ -46,7 +47,7 @@ assert(
 );
 ```
 
-Your `p` element should contain the first few words of the provided additional `kitty ipsum text`.
+Your `p` element should contain the first few words of the provided additional `kitty ipsum` text.
 
 ```js
 assert.isTrue(/Purr\s+jump\s+eat/gi.test($('p').text()));

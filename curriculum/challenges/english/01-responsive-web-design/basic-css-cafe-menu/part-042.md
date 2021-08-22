@@ -2,6 +2,7 @@
 id: 5f3cade94c6576e7f7b7953f
 title: Part 42
 challengeType: 0
+dashedName: part-42
 ---
 
 # --description--
@@ -10,10 +11,18 @@ Now go ahead and change both the `flavor` and `price` class' widths to be `50%` 
 
 # --hints--
 
-Test 1
+You should set the `width` property to `50%` in your `.flavor` selector.
 
 ```js
+const flavorWidth = new __helpers.CSSHelp(document).getStyle('.flavor')?.getPropertyValue('width');
+assert(flavorWidth === '50%');
+```
 
+You should set the `width` property to `50%` in your `.price` selector.
+
+```js
+const priceWidth = new __helpers.CSSHelp(document).getStyle('.price')?.getPropertyValue('width');
+assert(priceWidth === '50%');
 ```
 
 # --seed--
@@ -37,12 +46,12 @@ Test 1
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
+          <h2>Coffee</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article>
-            <p>Carmel Macchiato</p>
+            <p>Caramel Macchiato</p>
             <p>3.75</p>
           </article>
           <article>
@@ -66,7 +75,7 @@ Test 1
 
 ```css
 body {
-  background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
 h1, h2, p {

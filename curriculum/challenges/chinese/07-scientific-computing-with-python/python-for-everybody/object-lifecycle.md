@@ -1,14 +1,16 @@
 ---
 id: 5e7b9f170b6c005b0e76f087
+title: 对象的生命周期
 challengeType: 11
 videoId: p1r3h_AMMIM
+dashedName: object-lifecycle
 ---
 
 # --question--
 
 ## --text--
 
-What will the following program print?:
+以下程序将打印什么？
 
 ```python
 class PartyAnimal:
@@ -31,46 +33,35 @@ q.party()
 
 ## --answers--
 
+<pre>
 Quincy constructed
-
 Miya constructed
-
 Quincy party count 1
-
 Miya party count 2
-
 Quincy party count 3
+</pre>
 
 ---
 
+<pre>
 Quincy constructed
-
 Miya constructed
-
 Quincy party count 1
-
 Miya party count 1
-
 Quincy party count 2
+</pre>
 
 ---
 
+<pre>
 Quincy constructed
-
 Quincy party count 1
-
 Quincy party count 2
-
 Miya constructed
-
 Miya party count 1
+</pre>
 
 ## --video-solution--
 
 2
-
-# --hints--
-
-
-# --solutions--
 

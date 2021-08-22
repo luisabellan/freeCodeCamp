@@ -3,6 +3,7 @@ id: 8d5123c8c441eddfaeb5bdef
 title: Implement Bubble Sort
 challengeType: 1
 forumTopicId: 301612
+dashedName: implement-bubble-sort
 ---
 
 # --description--
@@ -14,9 +15,6 @@ Here we will see bubble sort. The bubble sort method starts at the beginning of 
 This method requires multiple iterations through the array and for average and worst cases has quadratic time complexity. While simple, it is usually impractical in most situations.
 
 **Instructions:** Write a function `bubbleSort` which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.
-
-**Note:**  
-We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging `array` to see your sorting algorithm in action!
 
 # --hints--
 
@@ -54,7 +52,7 @@ assert(
 );
 ```
 
-`bubbleSort` should return an array that is unchanged except for order.
+`bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])` should return an array that is unchanged except for order.
 
 ```js
 assert.sameMembers(
@@ -115,8 +113,6 @@ function bubbleSort(array) {
   return array;
   // Only change code above this line
 }
-
-bubbleSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 # --solutions--

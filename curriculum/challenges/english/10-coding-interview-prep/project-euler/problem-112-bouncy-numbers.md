@@ -3,6 +3,7 @@ id: 5900f3dd1000cf542c50feef
 title: 'Problem 112: Bouncy numbers'
 challengeType: 5
 forumTopicId: 301738
+dashedName: problem-112-bouncy-numbers
 ---
 
 # --description--
@@ -21,10 +22,10 @@ Find the least number for which the proportion of bouncy numbers is exactly 99%.
 
 # --hints--
 
-`euler112()` should return 1587000.
+`bouncyNumbers()` should return `1587000`.
 
 ```js
-assert.strictEqual(euler112(), 1587000);
+assert.strictEqual(bouncyNumbers(), 1587000);
 ```
 
 # --seed--
@@ -32,12 +33,12 @@ assert.strictEqual(euler112(), 1587000);
 ## --seed-contents--
 
 ```js
-function euler112() {
+function bouncyNumbers() {
 
   return true;
 }
 
-euler112();
+bouncyNumbers();
 ```
 
 # --solutions--

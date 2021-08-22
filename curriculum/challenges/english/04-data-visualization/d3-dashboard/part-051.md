@@ -2,11 +2,12 @@
 id: 5d8a4cfbe6b6180ed9a1ca10
 title: Part 51
 challengeType: 0
+dashedName: part-51
 ---
 
 # --description--
 
-Set the `x` values for `tumblrLine` using another "d function". Use your `xScale` and the `d.year` to calculcate their values just like you did for the Twitter line.
+Set the `x` values for `tumblrLine` using another "d function". Use your `xScale` and the `d.year` to calculate their values just like you did for the Twitter line.
 
 # --hints--
 

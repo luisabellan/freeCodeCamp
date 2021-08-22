@@ -3,6 +3,7 @@ id: 587d8256367417b2b2512c77
 title: Adjacency List
 challengeType: 1
 forumTopicId: 301620
+dashedName: adjacency-list
 ---
 
 # --description--
@@ -57,7 +58,7 @@ There should be an edge between `Jill` and `Jenny`.
 ```js
 assert(
   undirectedAdjList.Jill.indexOf('Jenny') !== -1 &&
-    undirectedAdjList.Jill.indexOf('Jenny') !== -1
+    undirectedAdjList.Jenny.indexOf('Jill') !== -1
 );
 ```
 

@@ -2,7 +2,7 @@
 
 const locations = {
   index:
-    'learn/apis-and-microservices/managing-packages-with-npm/' +
+    'learn/back-end-development-and-apis/managing-packages-with-npm/' +
     'how-to-use-package-json-the-core-of-any-node-js-project-or-npm-package'
 };
 
@@ -15,7 +15,7 @@ const unhandledErrorMessage = 'Something is not quite right';
 const runningOutput = '// running tests';
 const finishedOutput = '// tests completed';
 
-describe('Backend challenge', function() {
+describe('Backend challenge', function () {
   it('renders', () => {
     cy.visit(locations.index);
 

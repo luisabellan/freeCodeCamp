@@ -4,6 +4,7 @@ title: Size Your Images
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM9MmCP'
 forumTopicId: 18282
+dashedName: size-your-images
 ---
 
 # --description--
@@ -30,8 +31,8 @@ Your `img` element should have the class `smaller-image`.
 
 ```js
 assert(
-  $("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class') ===
-    'smaller-image'
+  $("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class')
+    .trim().split(/\s+/g).includes('smaller-image')
 );
 ```
 

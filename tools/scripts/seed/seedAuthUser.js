@@ -1,17 +1,14 @@
-const fullyCertifiedUser = require('./certifiedUserData');
-
 const path = require('path');
-require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
-const MongoClient = require('mongodb').MongoClient;
-const ObjectId = require('mongodb').ObjectID;
 const debug = require('debug');
+require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
+const { MongoClient, ObjectId } = require('mongodb');
+const defaultUserImage = require('../../../config/misc').defaultUserImage;
+const fullyCertifiedUser = require('./certifiedUserData');
 
 const envVariables = process.argv;
 
 const log = debug('fcc:tools:seedLocalAuthUser');
 const { MONGOHQ_URL } = process.env;
-
-const defaultUserImage = require('../../../config/misc').defaultUserImage;
 
 function handleError(err, client) {
   if (err) {
@@ -153,23 +150,36 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
   const user = db.collection('user');
 
   if (process.argv[2] === 'certUser') {
-    user.deleteOne({ _id: ObjectId('5fa2db00a25c1c1fa49ce067') }, err => {
-      handleError(err, client);
+    user.deleteMany(
+      {
+        _id: {
+          $in: [
+            ObjectId('5fa2db00a25c1c1fa49ce067'),
+            ObjectId('5bd30e0f1caf6ac3ddddddb5'),
+            ObjectId('5bd30e0f1caf6ac3ddddddb9')
+          ]
+        }
+      },
+      err => {
+        handleError(err, client);
 
-      try {
-        user.insertOne(fullyCertifiedUser);
-      } catch (e) {
-        handleError(e, client);
-      } finally {
-        log('local auth user seed complete');
-        client.close();
+        try {
+          user.insertOne(fullyCertifiedUser);
+          user.insertOne(blankUser);
+        } catch (e) {
+          handleError(e, client);
+        } finally {
+          log('local auth user seed complete');
+          client.close();
+        }
       }
-    });
+    );
   } else {
     user.deleteMany(
       {
         _id: {
           $in: [
+            ObjectId('5fa2db00a25c1c1fa49ce067'),
             ObjectId('5bd30e0f1caf6ac3ddddddb5'),
             ObjectId('5bd30e0f1caf6ac3ddddddb9')
           ]

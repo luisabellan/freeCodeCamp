@@ -4,11 +4,12 @@ title: Specify How Fonts Should Degrade
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cpVKBfQ'
 forumTopicId: 18304
+dashedName: specify-how-fonts-should-degrade
 ---
 
 # --description--
 
-There are several default fonts that are available in all browsers. These generic font families include `monospace`, `serif` and `sans-serif`
+There are several default fonts that are available in all browsers. These generic font families include `monospace`, `serif` and `sans-serif`.
 
 When one font isn't available, you can tell the browser to "degrade" to another font.
 
@@ -28,7 +29,7 @@ To begin, apply the `monospace` font to the `h2` element, so that it now has two
 
 In the last challenge, you imported the `Lobster` font using the `link` tag. Now comment out that import of the `Lobster` font (using the HTML comments you learned before) from Google Fonts so that it isn't available anymore. Notice how your `h2` element degrades to the `monospace` font.
 
-**Note:** If you have the Lobster font installed on your computer, you won't see the degradation because your browser is able to find the font.
+**Note:** If you have the `Lobster` font installed on your computer, you won't see the degradation because your browser is able to find the font.
 
 # --hints--
 
@@ -46,7 +47,7 @@ Your h2 element should degrade to the font `monospace` when `Lobster` is not ava
 
 ```js
 assert(
-  /\s*h2\s*\{\s*font-family\:\s*(\'|")?Lobster(\'|")?,\s*monospace\s*;\s*\}/gi.test(
+  /\s*h2\s*\{\s*font-family\s*\:\s*(\'|"|)Lobster\1\s*,\s*monospace\s*;?\s*\}/gi.test(
     code
   )
 );

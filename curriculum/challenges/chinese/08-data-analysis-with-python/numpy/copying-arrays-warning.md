@@ -1,14 +1,16 @@
 ---
 id: 5e9a0a8e09c5df3cc3600ed7
+title: 复制数组警告
 challengeType: 11
 videoId: iIoQ0_L0GvA
+dashedName: copying-arrays-warning
 ---
 
 # --question--
 
 ## --text--
 
-What is the value of `a` after running the following code?
+运行以下代码后， `a` 的值是多少？
 
 ```py
 import numpy as np
@@ -39,9 +41,4 @@ b[2] = 20
 ## --video-solution--
 
 2
-
-# --hints--
-
-
-# --solutions--
 
