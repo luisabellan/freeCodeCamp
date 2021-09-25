@@ -13,11 +13,11 @@ dashedName: responsively-style-checkboxes
 
 # --description--
 
-Dado que las clases `col-xs-*` de Bootstrap son aplicables a todos los elementos `form`, ¡también puedes usarlas en tus casillas de verificación! De esta manera, las casillas de verificación se distribuirán uniformemente por toda la página, independientemente de la amplitud de la resolución de la pantalla.
+Dado que las clases de Bootstrap `col-xs-*` son aplicables a todos los elementos `form`, ¡también puedes usarlas para tus casillas de verificación! De esta manera, las casillas de verificación se distribuirán uniformemente por toda la página, independientemente de la amplitud de la resolución de la pantalla.
 
 # --instructions--
 
-Anida las tres casillas de verificación en un elemento `<div class="row">`. Luego incrusta cada uno de ellos en un elemento `<div class="col-xs-4">`.
+Anida las tres casillas de verificación en un elemento `<div class="row">`. Luego, anida cada uno de ellos en un elemento `<div class="col-xs-4">`.
 
 # --hints--
 
@@ -27,13 +27,13 @@ Todas las casillas de verificación deben anidarse dentro de un `div` con la cla
 assert($('div.row:has(input[type="checkbox"])').length > 0);
 ```
 
-Cada casilla de verificación debe inscrustarse dentro de un `div` con la clase `row`.
+Cada casilla de verificación debe anidarse dentro de un `div` con la clase `col-xs-4`.
 
 ```js
 assert($('div.col-xs-4:has(input[type="checkbox"])').length > 2);
 ```
 
-Todos los elementos `div` deben tener etiquetas de cierre.
+Todos tus elementos `div` deben tener etiquetas de cierre.
 
 ```js
 assert(
@@ -69,10 +69,10 @@ assert(
       <h2 class="text-primary text-center">CatPhotoApp</h2>
     </div>
     <div class="col-xs-4">
-      <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+      <a href="#"><img class="img-responsive thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
     </div>
   </div>
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
   <div class="row">
     <div class="col-xs-4">
       <button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
@@ -138,10 +138,10 @@ assert(
       <h2 class="text-primary text-center">CatPhotoApp</h2>
     </div>
     <div class="col-xs-4">
-      <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+      <a href="#"><img class="img-responsive thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
     </div>
   </div>
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
   <div class="row">
     <div class="col-xs-4">
       <button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>

@@ -8,11 +8,11 @@ dashedName: taste-the-bootstrap-button-color-rainbow
 
 # --description--
 
-La clase `btn-primary` es el color principal que usarás en tu aplicación. Es útil para resaltar las acciones que quieres que tome tu usuario.
+La clase `btn-primary` es el color principal que usarás en tu aplicación. Es útil para resaltar acciones que deseas que tu usuario realice.
 
-Reemplaza la clase de Bootstrap `btn-default` con `btn-primary` en tu botón.
+Reemplaza la clase `btn-default` de Bootstrap por `btn-primary` en tu botón.
 
-Ten en cuenta que este botón todavía necesitará las clases `btn` y `btn-block`.
+Ten en cuenta que este botón aún necesitará las clases `btn` y `btn-block`.
 
 # --hints--
 
@@ -75,9 +75,9 @@ assert(
 
   <p>Click here for <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
   <button class="btn btn-default btn-block">Like</button>
   <p>Things cats love:</p>
   <ul>
@@ -138,9 +138,9 @@ assert(
 
   <p>Click here for <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
   <button class="btn btn-primary btn-block">Like</button>
   <p>Things cats love:</p>
   <ul>

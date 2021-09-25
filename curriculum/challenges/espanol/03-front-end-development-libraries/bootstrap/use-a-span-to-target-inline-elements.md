@@ -14,11 +14,11 @@ Puedes usar spans para crear elementos en línea. ¿Recuerdas cuando usamos la c
 
 <button class='btn btn-block' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>botón btn-block</button>
 
-Esto ilustra la diferencia entre un elemento "en línea" y un elemento de "bloque".
+Eso ilustra la diferencia entre un elemento "inline" y un elemento "block".
 
 Usando el elemento en línea `span`, puedes alinear varios elementos, e incluso estilizar diferentes partes de la misma línea de manera diferente.
 
-Usando un elemento `span`, anida la palabra `love` dentro del elemento `p` que actualmente contiene el texto `Things cats love`. Luego asigna al `span` la clase `text-danger` para hacer al texto rojo.
+Usando un elemento `span`, anida la palabra `love` dentro del elemento `p` que actualmente tiene el texto `Things cats love`. Luego dale a `span` la clase `text-danger` para cambiar el texto a rojo.
 
 Así es como harías esto para el elemento `p` que tiene el texto `Top 3 things cats hate`:
 
@@ -34,7 +34,7 @@ Tu elemento `span` debe estar dentro de tu elemento `p`.
 assert($('p span') && $('p span').length > 0);
 ```
 
-Tu elemento `span` solo debe tener el texto `love`.
+Tu elemento `span` debe tener solo el texto `love`.
 
 ```js
 assert(
@@ -86,9 +86,9 @@ assert(
 <div class="container-fluid">
   <h2 class="text-primary text-center">CatPhotoApp</h2>
 
-  <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="img-responsive thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
   <div class="row">
     <div class="col-xs-4">
       <button class="btn btn-block btn-primary">Like</button>
@@ -146,9 +146,9 @@ assert(
 <div class="container-fluid">
   <h2 class="text-primary text-center">CatPhotoApp</h2>
 
-  <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="img-responsive thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
   <div class="row">
     <div class="col-xs-4">
       <button class="btn btn-block btn-primary">Like</button>

@@ -8,9 +8,9 @@ dashedName: center-text-with-bootstrap
 
 # --description--
 
-Ahora que estamos usando Bootstrap, podemos centrar el encabezado para que luzca mejor. Todo lo que necesitamos hacer es añadir la clase `text-center` a nuestro elemento `h2`.
+Ahora que estamos usando Bootstrap, podemos centrar nuestro encabezado para que luzca mejor. Lo único que necesitamos hacer es agregar la clase `text-center` a nuestro elemento `h2`.
 
-Recuerda que puedes añadir varias clases al mismo elemento separando cada una de ellas con un espacio:
+Recuerda que puedes agregar varias clases al mismo elemento separando cada una de ellas con un espacio, de la siguiente manera:
 
 ```html
 <h2 class="red-text text-center">your text</h2>
@@ -67,9 +67,9 @@ assert($('h2').hasClass('red-text'));
 
   <p>Click here for <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
   <p>Things cats love:</p>
   <ul>
     <li>cat nip</li>
@@ -129,9 +129,9 @@ assert($('h2').hasClass('red-text'));
 
   <p>Click here for <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
   <p>Things cats love:</p>
   <ul>
     <li>cat nip</li>

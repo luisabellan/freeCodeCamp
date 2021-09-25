@@ -8,7 +8,7 @@ dashedName: warn-your-users-of-a-dangerous-action-with-btn-danger
 
 # --description--
 
-Bootstrap viene con diferentes colores predefinidos para botones. La clase `btn-danger` es el color del botón que usarás para notificar a los usuarios que el botón realiza una acción destructiva, como eliminar una foto de gato.
+Bootstrap viene con varios colores predefinidos para botones. La clase `btn-danger` es el color del botón que usarás para notificar a los usuarios que el botón realiza una acción destructiva, como eliminar la foto de un gato.
 
 Crea un botón con el texto `Delete` y dale la clase `btn-danger`.
 
@@ -22,7 +22,7 @@ Debes crear un nuevo elemento `button` con el texto `Delete`.
 assert(new RegExp('Delete', 'gi').test($('button').text()));
 ```
 
-Todos tus botones de Bootstrap deben tener clases `btn` y `btn-block`.
+Todos tus botones de Bootstrap deben tener las clases `btn` y `btn-block`.
 
 ```js
 assert($('button.btn-block.btn').length > 2);
@@ -34,7 +34,7 @@ Tu nuevo botón debe tener la clase `btn-danger`.
 assert($('button').hasClass('btn-danger'));
 ```
 
-Todos los elementos `button` deben tener etiquetas de cierre.
+Todos tus elementos `button` deben tener etiquetas de cierre.
 
 ```js
 assert(
@@ -81,9 +81,9 @@ assert(
 
   <p>Click here for <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
   <button class="btn btn-block btn-primary">Like</button>
   <button class="btn btn-block btn-info">Info</button>
   <p>Things cats love:</p>
@@ -145,9 +145,9 @@ assert(
 
   <p>Click here for <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
   <button class="btn btn-block btn-primary">Like</button>
   <button class="btn btn-block btn-info">Info</button>
   <button class="btn btn-block btn-danger">Delete</button>

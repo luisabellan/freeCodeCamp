@@ -112,6 +112,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
+    this._container?.focus();
   }
 
   componentDidUpdate(prevProps: ShowVideoProps): void {
@@ -205,8 +206,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
           />
           <Grid>
             <Row>
-              {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-              {/* @ts-ignore */}
               <Spacer />
               <ChallengeTitle
                 block={block}
@@ -246,8 +245,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription description={description} />
                 <PrismFormatted className={'line-numbers'} text={text} />
-                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                {/* @ts-ignore */}
                 <Spacer />
                 <ObserveKeys>
                   <div className='video-quiz-options'>
@@ -277,8 +274,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                     ))}
                   </div>
                 </ObserveKeys>
-                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                {/* @ts-ignore */}
                 <Spacer />
                 <div
                   style={{
@@ -291,8 +286,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                     <span>{t('learn.check-answer')}</span>
                   )}
                 </div>
-                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                {/* @ts-ignore */}
                 <Spacer />
                 <Button
                   block={true}
@@ -304,8 +297,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 >
                   {t('buttons.check-answer')}
                 </Button>
-                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                {/* @ts-ignore */}
                 <Spacer size={2} />
               </Col>
               <CompletionModal

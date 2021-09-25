@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedb08845
-title: Botones radio con estilo responsivo
+title: Botones de radio con estilo responsivo
 challengeType: 0
 forumTopicId: 18270
 required:
@@ -13,27 +13,27 @@ dashedName: responsively-style-radio-buttons
 
 # --description--
 
-¡También puedes usar las clases `col-xs-*` de Bootstrap en los elementos `form`! De esta manera, nuestros botones de radio se distribuirán uniformemente por toda la página, independientemente del ancho de la resolución de la pantalla.
+¡Puedes utilizar también las clases `col-xs-*` de Bootstrap en elementos `form`! De esta forma nuestros botones de radio se distribuirán uniformemente a través de la página, sin importar el ancho de la resolución de pantalla.
 
-Anida ambos botones de radio dentro de un elemento `<div class="row">`. Luego anida cada uno de ellos en un elemento `<div class="col-xs-6">`.
+Anida tus dos botones de radio dentro de un elemento `<div class="row">`. Luego, anida cada uno de ellos dentro de un elemento `<div class="col-xs-6">`.
 
-**Nota:** Como recordatorio, los botones de radio son `entradas`, elementos de tipo `radio`.
+**Nota:** Como recordatorio, los botones de radio son elementos `input` con el valor de tipo `radio`.
 
 # --hints--
 
-Todas las casillas de radio deben anidarse dentro de un `div` con la clase `row`.
+Todos tus botones de radio deben estar anidados dentro de un `div` con la clase `row`.
 
 ```js
 assert($('div.row:has(input[type="radio"])').length > 0);
 ```
 
-Cada uno de tus botones de radio debe inscrustarse dentro un `div` con la clase `col-xs-6`.
+Cada uno de tus botones de radio debe estar anidado dentro de su propio `div` con la clase `col-xs-6`.
 
 ```js
 assert($('div.col-xs-6:has(input[type="radio"])').length > 1);
 ```
 
-Todos sus elementos `div` deben tener etiquetas de cierre.
+Todos tus elementos `div` deben tener etiquetas de cierre.
 
 ```js
 assert(
@@ -68,10 +68,10 @@ assert(
       <h2 class="text-primary text-center">CatPhotoApp</h2>
     </div>
     <div class="col-xs-4">
-      <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+      <a href="#"><img class="img-responsive thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
     </div>
   </div>
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
   <div class="row">
     <div class="col-xs-4">
       <button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
@@ -130,10 +130,10 @@ assert(
       <h2 class="text-primary text-center">CatPhotoApp</h2>
     </div>
     <div class="col-xs-4">
-      <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+      <a href="#"><img class="img-responsive thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
     </div>
   </div>
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
   <div class="row">
     <div class="col-xs-4">
       <button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
